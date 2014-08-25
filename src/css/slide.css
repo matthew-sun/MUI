@@ -1,0 +1,6 @@
+/* ==== 巨无霸 ==== */
+.mod_slide { overflow: hidden; position: relative;}
+.mod_slide .slide_wrap { position: relative;}
+.mod_slide .slide_wrap .img_slide { position: absolute;}
+.mod_slide .slide_wrap .img_slide li {float: left; display: block;}
+.mod_slide .img_slide li a { width: 100%; float: left; display: block;}

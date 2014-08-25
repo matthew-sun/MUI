@@ -1,0 +1,60 @@
+ /*===== 基础按钮样式 =====*/
+    .mod_btn{
+        cursor:pointer;
+        overflow:visible;
+        outline:none;
+        display:inline-block;
+        padding:0 15px;
+        width:auto;
+        background-color:#34a6db;
+        vertical-align:middle;
+        text-decoration:none;
+        color:#FFF;
+        border:0;
+        border-radius: 5px;
+    }
+    .mod_btn:hover { color: #fff;}
+
+        /*===== 扩展尺寸 =====*/
+            .mod_btn_mini{padding:0 8px;}
+            .mod_btn_mini span{
+                height:22px;
+                line-height:20px;
+                line-height:24px\9;
+                _line-height:20px;
+            }
+
+
+            .mod_btn_normal{padding:6px 15px;}
+            .mod_btn_xlarge{padding:8px 28px;}
+
+            .mod_btn_large{
+                letter-spacing: 1em;
+                padding: 15px 0;
+                width: 100%
+            }
+            .mod_btn_large span{
+                height:32px;
+                line-height:30px;
+                line-height:34px\9;
+                _line-height:30px;
+                letter-spacing: 16px;
+            }
+            .mod_btn_ln {
+                padding: 12px 0; 
+                width: 100%;
+                text-align: center;
+                font-size: .92857em;
+            }
+
+
+        /*===== 扩展颜色 =====*/
+            .mod_btn_bg1{background-color:#ff8c26;}
+
+            .mod_btn_bg2{background-color:#fff; color: #666; border: 1px solid #c8c8c8;}
+            .mod_btn_bg2:hover { color: #666;}
+
+            .mod_btn_bg3{background-color:#34a6db;}
+
+        /*===== 不可点 =====*/
+            .mod_btn_disable{cursor:default;background-color:#E1E1E1; color:#999;}

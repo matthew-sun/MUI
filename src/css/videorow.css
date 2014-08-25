@@ -1,0 +1,27 @@
+/* ==== 视频行 ==== */
+.mod_row {margin: 10px; margin-bottom: 0;}
+.mod_row .mod_row_hd { height: 26px; line-height: 26px; font-size: 1.14285em; color: #333;}
+.mod_row .mod_row_bd {overflow: hidden;}
+.mod_row .mod_row_bd .item { display: block; font-size: .92857em;width: 50%; float: left; margin-bottom: 10px;}
+.mod_row .mod_row_bd .item .img_wrap {text-align: center; line-height: 0; }
+.mod_row .mod_row_bd .item .img_wrap img { width: 96%; height: auto;}
+.mod_row .mod_row_bd .item .img_wrap .notes_wrap { position: relative; display: block; }
+.mod_row .mod_row_bd .item .img_wrap .notes_wrap .img_time { position: absolute; right: 2%; bottom: 0; padding: 3px; z-index: 10; font-size: .78571em; line-height: 15px; color: #eae9e9; display: inline-block; background: rgba(34,34,34,.8); }
+.mod_row .mod_row_bd .item h5 ,
+.mod_row .mod_row_bd .item .info { margin: 0 2px;} 
+
+.mod_row .mod_row_bd .item h5 { color: #333; height: 26px; line-height: 26px; width: 96%; margin-left: 2%; font-weight: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.mod_row .mod_row_bd .item .info { font-size: .78571em; color: #999; height: 11px; line-height: 11px; width: 96%; margin-left: 2%;}
+.mod_row .mod_row_bd .item .info .tit { float: left;}
+.mod_row .mod_row_bd .item .info .views { float: right; position: relative;}
+
+.mod_row .mod_row_bd .item .info .views:before {content: ''; background-image: url(icon.png); background-repeat: no-repeat; position: absolute; 
+background-size: 25px 12px; -webkit-background-size: 25px 12px;}
+.mod_live .mod_row_bd .item .info .views:before {  background-position: 0 0; width: 13px; height: 8px; left: -13px; top: 1px;  }
+.mod_video .mod_row_bd .item .info .views:before { background-position: -13px 0; width: 13px; height: 12px; left: -13px; top: -1px; }
+.mod_video {margin-bottom: 0;}
+
+@media screen and (max-width: 320px) {
+    .mod_live .mod_row_bd .item .info .views:before {  background-position: 0 0; width: 13px; height: 8px; left: -13px; top: 3px;  }
+    .mod_video .mod_row_bd .item .info .views:before { background-position: -13px 0; width: 13px; height: 12px; left: -13px; top: 1px; }
+}

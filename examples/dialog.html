@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dialog</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <link rel="stylesheet" href="../src/css/gb-common.css">
+    <style>
+        body {max-width: 1024px;margin: 20px auto;}
+        .mod_btn { margin-right: 10px;}
+    </style>
+</head>
+<body>
+    <button id="dialog1" class="mod_btn">lay id</button>
+    <button id="dialog2" class="mod_btn">pushHtml</button>
+    <!-- S 弹层 -->
+    <div class="overlay" id="J_overlay1">
+        <section class="modal modal_tips">
+            tips1
+        </section>
+    </div>
+    <!-- E 弹层 -->
+</body>
+<script src='../src/seajs/2.2.0/sea.js'></script>
+<script>
+    seajs.use('../src/js/dialog_test.js');
+</script>
+</html>

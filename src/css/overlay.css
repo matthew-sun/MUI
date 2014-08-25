@@ -1,0 +1,19 @@
+/* 弹层 */
+.overlay { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 999; background-color: rgba(0, 0, 0, 0.3); display: none;
+            -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center;
+            justify-content: center; -webkit-box-align: center; -ms-flex-align: center;
+            -webkit-align-items: center; align-items: center;  }
+.overlay .modal { display: none;width:95%;background-color: #fff; overflow: hidden;
+             background-image: linear-gradient(to top,#f5f5f5,#fff); background-image: -webkit-linear-gradient(to top,#f5f5f5,#fff);border-radius: 10px;}
+.lay_on {display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex;}
+
+    /* 文字提示 */
+    .overlay .modal_tips { font-size: .92857em; color: #020202; height: 30px; line-height: 30px; text-align: center;
+     padding:15px 0; }
+
+    /* 登录弹窗 */
+    .overlay .modal_login {  height: 160px;}
+    .overlay .modal_login .modal_bd { height: 100px; overflow: hidden;text-align: center;}
+    .overlay .modal_login .modal_bd .bd_txt {font-size: .92857em;margin-top: 50px;}
+    .overlay .modal_login .modal_ft {text-align: center; padding-top: 10px; height: 60px;}
+    .overlay .modal_login .modal_ft .mod_btn { margin-right: 20px;}

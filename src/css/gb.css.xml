@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<list encoding="utf-8">
+	<file>reset.css</file>
+	<file>header.css</file>
+    <file>nav.css</file>
+    <file>btn.css</file>
+    <file>footer.css</file>
+    <file>loading.css</file>
+    <file>overlay.css</file>
+    <file>videorow.css</file>
+</list>
