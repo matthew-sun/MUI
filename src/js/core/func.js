@@ -6,14 +6,14 @@
  * @date : 2014/08/25
  */
 define(function(require, exports, module){
-    var $ = require('./zepto');
+    var $ = require('../zepto/zepto');
 
     /**
      * CLASS model
      * @return {[type]} [description]
      */
     
-    var $F = (function() {
+    var func = (function() {
         
         var _func = {};
 
@@ -39,13 +39,13 @@ define(function(require, exports, module){
                 }
               
                 subClass.superClass = superClass.prototype;
-                subClass.callSuper = function(context,func){
+                subClass.callSuper = function(context,method){
                     var slice = Array.prototype.slice;
                     var a = slice.call(arguments, 2);
-                    var func = subClass.superClass[func];
+                    var method = subClass.superClass[method];
                
-                    if(func){
-                        func.apply(context, a.concat(slice.call(arguments)));
+                    if(method){
+                        method.apply(context, a.concat(slice.call(arguments)));
                     }
                 };
                 subClass.prototype = new tempClass();
@@ -80,7 +80,7 @@ define(function(require, exports, module){
      * EVENT model
      */
     
-    ;(function($F) {
+    ;(function(func) {
 
         var _cache = {};
 
@@ -96,7 +96,7 @@ define(function(require, exports, module){
          * @param  {[type]} data 回调数据
          * @return {[type]}      [description]
          */
-        $F.fire = function(type, data) {
+        func.fire = function(type, data) {
             var listeners = _cache[type],
                 len = 0;
             if (typeof listeners !== 'undefined') {
@@ -124,7 +124,7 @@ define(function(require, exports, module){
          * @return {[type]}            this
          */
         
-        $F.on = function(types, callback, scope) {
+        func.on = function(types, callback, scope) {
             types = types || [];
             var args = [].slice.call(arguments);
 
@@ -155,7 +155,7 @@ define(function(require, exports, module){
          * @return {[type]}            [description]
          */
         
-        $F.un = function(type, callback, scope) {
+        func.un = function(type, callback, scope) {
             var listeners = _cache[type];
             if (!listeners) {
                 return this;
@@ -177,23 +177,23 @@ define(function(require, exports, module){
             return this;
         }
 
-        $F.removeAll = function() {
+        func.removeAll = function() {
             _cache = {};
             return this;
         }
 
-    })($F)
+    })(func)
 
     /**
      * HTTP model
      */
     
-    ;(function($F) {
+    ;(function(func) {
 
         /**
          * loader
          */
-        $F.loader = function(opts){
+        func.loader = function(opts){
             opts = $.extend({
                 dataType : "jsonp",
                 jsonp : "cb",
@@ -214,7 +214,7 @@ define(function(require, exports, module){
          * @return {[type]} String [cookie值]
          */
         
-        $F.getCookie = function(name) {
+        func.getCookie = function(name) {
             var arr = document.cookie.split('; '),
                 i = 0,
                 len = arr.length ;
@@ -236,7 +236,7 @@ define(function(require, exports, module){
          * @param {[type]} iDay  [过期时间，单位：天]
          */
         
-        $F.setCookie = function(name, value, iDay) {
+        func.setCookie = function(name, value, iDay) {
             if(iDay!==false){
 
                 var exp = new Date(); 
@@ -253,22 +253,22 @@ define(function(require, exports, module){
          * @param  {[type]} name [Cookie名]
          */
         
-        $F.removeCookie = function (name) {
-            $F.setCookie(name, '', -1);
+        func.removeCookie = function (name) {
+            func.setCookie(name, '', -1);
         }
-    })($F)
+    })(func)
 
     /**
      * MOBILE model
      */
     
-    ;(function($F) {
+    ;(function(func) {
 
         /**
          * 判断浏览器版本
          */
         
-        $F.Device = function() {
+        func.Device = function() {
             var ua = navigator.userAgent;
             var os = this.os = {},browser = this.browser = {},
 
@@ -338,7 +338,7 @@ define(function(require, exports, module){
             };
         }
 
-    })($F)
+    })(func)
 
-    return $F;
+    return func;
 })

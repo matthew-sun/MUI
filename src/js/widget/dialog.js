@@ -7,8 +7,8 @@
  * @date : 2014/08/19
  */
 define(function(require, exports, module){
-    var $ = require('../base/zepto');
-    var $F = require('../base/func');
+    var $ = require('../zepto/zepto');
+    var func = require('../core/func');
 
     var defaults = {
         type : 'none',
@@ -18,8 +18,13 @@ define(function(require, exports, module){
     // 展示特效
     var showEffect = {
         none : function(el) {
-            el.addClass('lay_on');
-            el.find('.modal').show();
+            el.addClass('lay_on').find('.modal').show();
+        },
+        fade : function(el) {
+            el.addClass('lay_on').css('opacity',0).find('.modal').show();
+            el.animate({
+                opacity : 1
+            },200)
         }
     }
 
@@ -27,10 +32,24 @@ define(function(require, exports, module){
     var hideEffect = {
         none : function(el,htype) {
             if( htype === 'hide') {
-                el.removeClass('lay_on');
-                el.find('.modal').hide();
+                el.removeClass('lay_on').find('.modal').hide();
             }else {
                 el.remove();
+            }
+        },
+        fade : function(el,htype) {
+            if( htype === 'hide') {
+                el.animate({
+                    opacity : 0
+                },200,function() {
+                    el.removeClass('lay_on').find('.modal').hide();
+                })    
+            }else {
+                el.animate({
+                    opacity : 0
+                },200,function() {
+                    el.remove();
+                })
             }
         }
     }
@@ -39,7 +58,7 @@ define(function(require, exports, module){
      * 弹层组件
      */
    
-     var Dialog = $F.Class({
+     var Dialog = func.Class({
         // 初始化
         init : function(option) {
             var option = this.option = $.extend({},defaults,option);

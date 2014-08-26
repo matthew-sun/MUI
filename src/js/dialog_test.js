@@ -6,11 +6,12 @@
  * @date : 2014/08/25
  */
 define(function(require, exports, module){
-    var $ = require('./base/zepto');
-    var fastclick = require('./base/fastclick');
-    var itpl = require('./base/itpl');
+    var $ = require('./zepto/zepto');
+    
+    var fastclick = require('./core/fastclick');
+    var itpl = require('./core/itpl');
 
-    var dialog = require('./ui/dialog');
+    var dialog = require('./widget/dialog');
 
     var dialog2Str = '<div class="overlay" id="J_overlay2">\
                     <section class="modal modal_tips">\
@@ -34,14 +35,16 @@ define(function(require, exports, module){
         
         $('#dialog1').on('click',function() {
             dialog({
-                id : 'J_overlay1'
+                id : 'J_overlay1',
+                type : 'fade'
             }).show();
 
             setTimeout(function() {
                 dialog({
-                    id : 'J_overlay1'
+                    id : 'J_overlay1',
+                    type : 'fade'
                 }).hide();
-            },500)
+            },600)
 
         })
 
