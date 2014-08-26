@@ -3,6 +3,8 @@
  * @name itpl
  * @description 提供不含js逻辑的前端模板解析，提供js预编译(经过编译的模板，输出效率将提升20倍以上)，提供直接模板方法
  * @modified 1.0.1 增加noConflict以避免命名冲突
+ * @modified 1.0.2 support seajs
+ * @modified 1.0.3 优化直接模板方法
  * @author matthewsun
  * @link matthew-sun@foxmail.com
  */
@@ -23,7 +25,7 @@
         :   renderFile(filename, content);
     }
 
-    itpl.VERSION = '1.0.2';
+    itpl.VERSION = '1.0.3';
 
     var previousItpl = window.itpl;
 
@@ -66,7 +68,10 @@
     
     itpl.render = function(str,data){
         for(key in data){
-            str = str.replace(new RegExp(defaults['openTag'] +'='+ key +defaults['closeTag'],"g"),data[key]);
+            str = str.replace(new RegExp('{{(.*?)}}',"g"),function($0,$1) {
+                var $1 = typeof(data[$1]) === 'undefined' ? '' : data[$1];
+                return $1;
+            });
         }
         return str;
     }

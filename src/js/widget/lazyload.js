@@ -32,10 +32,12 @@ define(function(require, exports, module){
         },
 
         bind4Events : function() {
+
                       // 页面滚动时触发懒加载
             this.$win.on('scroll',$.proxy(this.handler4ShowImg,this))
                       // 调整大小时触发懒加载
                      .on('resize',$.proxy(this.handler4ShowImg,this));
+                     
         },
 
         /**

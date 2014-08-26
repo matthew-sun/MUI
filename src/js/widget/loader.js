@@ -76,12 +76,12 @@ define(function(require, exports, module){
                     cb && cb()
                 },
                 complete : function(XMLHttpRequest,status) { //请求完成后最终执行参数
-            　　　　if(status=='timeout'){  //超时
+                    if(status=='timeout'){  //超时
                         $loading.find('.dot').hide();
                         $loading.find('.load_txt').html('加载超时');
                         _this.turn = true;
                         return ;
-            　　　　}
+                    }
                 }
             });
         }
