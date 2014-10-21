@@ -47,7 +47,7 @@ define(function(require, exports, module){
         bind4Events : function() {
             var _this = this,
                 $shareIcon = this.$el.find('a');
-            $shareIcon.on('tap',function() {
+            $shareIcon.on('click',function() {
                 var platform = $(this).data('name') || $(this).attr('data-name');
                 _this.handler4Share(platform);
             })
@@ -62,6 +62,11 @@ define(function(require, exports, module){
             var _this = this;
             window.location.assign(_this.SHAREAPI[name]);
             _this.cfg.callback && _this.cfg.callback();
+        },
+
+        destory : function() {
+            var $shareIcon = this.$el.find('a');
+            $shareIcon.off();
         }
 
     })

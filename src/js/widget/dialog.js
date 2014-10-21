@@ -96,6 +96,7 @@ define(function(require, exports, module){
             hideEffect[this.type].call(this,this.$el,this.htype);
         },
         destory : function() {
+            this.$el.off();
             this.$el.remove();
         }
 
