@@ -9,9 +9,12 @@ define(function(require, exports, module){
     var func = require('./func');
     var itpl = require('./itpl');
 
-    var Router = func.Class(function() {
+    var Router = func.Class({
 
-        init : function() {},
+        init : function(dirPath) {
+            this.dirPath = dirPath || '../src/js/';
+            this.onHashChange();
+        },
 
         /**
          * 路径缓存
@@ -20,9 +23,10 @@ define(function(require, exports, module){
          */
         
         cache : {} ,
+        tpl : {},
 
         /**
-         * 路由管控
+         * 路由控制
          * 
          * @param  {[type]} path    hash地址
          * @param  {[type]} options {
@@ -36,8 +40,16 @@ define(function(require, exports, module){
         when : function(path, options) {
 
             this.cache[path] = options;
-            onHashChange();
+
             this.load(path);
+
+            return this;
+        },
+
+        otherwise : function(options) {
+
+            this.cache['otherwiseSpecialTpl'] = options;
+            this.load('otherwiseSpecialTpl');
 
             return this;
         },
@@ -54,8 +66,10 @@ define(function(require, exports, module){
             if( hash.substring(0,2) !== '#/' ) {
                 location.hash = '#/';
             }
-
-            if( !isHash(path) ) {
+            if( !this.cache[location.hash.substring(1)] ) {
+                if( this.cache['otherwiseSpecialTpl'] ) {
+                    this.render('otherwiseSpecialTpl');
+                }
                 return ;
             }
 
@@ -70,11 +84,17 @@ define(function(require, exports, module){
          */
         
         render : function(path) {
-            var tpl = this.fetchTpl(path);
-            var data = this.cache[path].templateData;
-            var renderHtml = itpl(tpl,data);
 
-            $('#mui_view').html( renderHtml );
+            var $view = $('#mui_view');
+            var data = this.cache[path].templateData;
+            var me = this;
+
+            $.get(this.dirPath + this.cache[path].templateUrl,
+                function(response){
+                    var renderHtml = itpl(response,data);
+                    $view.html( renderHtml );
+                }
+            )
         },
 
         /**
@@ -86,7 +106,7 @@ define(function(require, exports, module){
         
         fetchTpl : function(path) {
             var me = this;
-            $.get('../' + me.cache[path].templateUrl,
+            $.get(this.dirPath + me.cache[path].templateUrl,
                 function(response){
                     return response;
                 }

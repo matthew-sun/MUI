@@ -5,6 +5,7 @@
  * @modified 1.0.1 增加noConflict以避免命名冲突
  * @modified 1.0.2 support seajs
  * @modified 1.0.3 优化直接模板方法
+ * @modified 1.0.4 mui版 去掉cache缓存
  * @author matthewsun
  * @link matthew-sun@foxmail.com
  */
@@ -39,7 +40,7 @@
         openTag: '<%',    // 逻辑语法开始标签
         closeTag: '%>',   // 逻辑语法结束标签
         escape: true,     // 是否编码输出变量的 HTML 字符
-        cache: true      // 是否开启缓存（依赖 options 的 filename 字段）
+        cache: false      // 是否开启缓存（依赖 options 的 filename 字段）
     };
 
     var cacheStore = itpl.cache = {};

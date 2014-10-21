@@ -2,7 +2,7 @@
  * @author : matthewsun
  * @mail : matthew-sun@foxmail.com
  * @description : 封装一些与业务无关的底层方法
- * @description : CLASS || EVENT || HTTP || MOBILE
+ * @description : CLASS || UTIls || EVENT || HTTP || MOBILE 
  * @date : 2014/08/25
  */
 define(function(require, exports, module){
@@ -75,6 +75,32 @@ define(function(require, exports, module){
 
         return _func;
     })()
+
+
+
+    /**
+     * UTIls model
+     */
+    
+    ;(function(func) {
+
+        /**
+         * 获取键值
+         * 
+         * @param  {[type]} obj [description]
+         * @return {[Array]}     [description]
+         */
+
+        func.keys = function(obj) {
+            var keys = [];
+            for (var key in obj) {
+                if (obj.hasOwnProperty(key)) keys.push(key)
+            }
+            return keys;
+
+        }
+        
+    })(func)
 
     /**
      * EVENT model
