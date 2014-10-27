@@ -66,10 +66,17 @@ define(function(require, exports, module){
             if( hash.substring(0,2) !== '#/' ) {
                 location.hash = '#/';
             }
+
+            // hash值不在缓存列表里，执行otherwise跳转
             if( !this.cache[location.hash.substring(1)] ) {
                 if( this.cache['otherwiseSpecialTpl'] ) {
                     this.render('otherwiseSpecialTpl');
                 }
+                return ;
+            }
+
+            // 当前hash不是当前匹配的path，return
+            if( !this.isHash(path) ) {
                 return ;
             }
 
