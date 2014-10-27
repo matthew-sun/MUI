@@ -7,7 +7,7 @@
  */
 
 define(function(require, exports, module){
-    var $ = require('zepto');
+    var $ = require('../zepto/zepto');
     var func = require('../core/func');
     var itpl = require('./core/itpl');
     
