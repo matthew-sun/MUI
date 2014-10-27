@@ -46,6 +46,17 @@ define(function(require, exports, module){
             return this;
         },
 
+        /**
+         * 默认跳转的链接
+         * 
+         * @param  {[type]} options {
+         *                              templateUrl : ?
+         *                              templateData : ? 
+         *                              controller : ?
+         *                           }
+         * 
+         * @return {[type]}         router对象
+         */
         otherwise : function(options) {
 
             this.cache['otherwiseSpecialTpl'] = options;

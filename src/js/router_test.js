@@ -16,10 +16,15 @@ define(function(require, exports, module){
     }).when('/index',{
         templateUrl : 'tpl/index.html'
     }).when('/about',{
-        templateUrl : 'tpl/about.html'
+        templateUrl : 'tpl/about.html',
+        controller : hello
     }).when('/list',{
         templateUrl : 'tpl/list.html'
     }).otherwise({
         templateUrl : 'tpl/404.html'
     })
+
+    function hello() {
+        alert('你好，小明！')
+    }
 })
