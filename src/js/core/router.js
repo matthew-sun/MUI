@@ -96,9 +96,10 @@ define(function(require, exports, module){
             var data = this.cache[path].templateData;
             var me = this;
 
+            // 载入loading画面
             me.loading();
 
-            $.get(this.dirPath + this.cache[path].templateUrl,
+            $.get(me.dirPath + me.cache[path].templateUrl,
                 function(response){
                     var renderHtml = itpl(response,data);
                     $view.html( renderHtml );
@@ -106,6 +107,7 @@ define(function(require, exports, module){
                     me.cache[path].controller && me.cache[path].controller();
                 }
             )
+
         },
 
         /**

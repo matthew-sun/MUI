@@ -73,6 +73,7 @@ define(function(require, exports, module){
 
         /**
          * 要加载的图片是不是在指定窗口内
+         * 
          * @param  {[type]} el DOM对象
          * @return {[type]}    布尔值
          */
@@ -88,6 +89,7 @@ define(function(require, exports, module){
 
         /**
          * 显示图片
+         * 
          * @param  {[type]} el DOM对象
          * @return {[type]}    [description]
          */

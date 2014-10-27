@@ -13,6 +13,10 @@ define(function(require, exports, module){
 
     router().when('/',{
         templateUrl : 'tpl/index.html'
+    }).when('/index',{
+        templateUrl : 'tpl/index.html'
+    }).when('/about',{
+        templateUrl : 'tpl/about.html'
     }).when('/list',{
         templateUrl : 'tpl/list.html'
     }).otherwise({

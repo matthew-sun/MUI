@@ -24,14 +24,16 @@ define(function(require, exports, module){
             this.options = $.extend({},defaults,options)
             this.$superNav = $('.' + this.options.superClass);
             this.$subCon = $('.' + this.options.subClass);
-            this.type = this.options.type;
         },
         bindEvents : function() {
             var me = this;
 
-            me.$superClass.on('click',function() {
-                var index = $(this).index();
-                me.handleEvent.call(me,index);
+            me.$superNav.each(function(index) {
+
+                $(this).on('click',function() {
+                    me.handleEvent(index)
+                })
+
             })
 
         },

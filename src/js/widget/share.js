@@ -55,6 +55,7 @@ define(function(require, exports, module){
 
         /**
          * 发送分享请求
+         * 
          * @param  {[type]} name 分享的平台
          */
         

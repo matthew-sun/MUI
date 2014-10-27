@@ -99,6 +99,22 @@ define(function(require, exports, module){
             return keys;
 
         }
+
+        /**
+         * hover hack
+         * 移动端模拟手触摸时的效果
+         */
+
+        func.bindActiveLink = function() {
+            var $body = $('body');
+
+            $body.on('touchstart','.J_active',function() {
+                $(this).addClass('hover');
+            })
+            $body.on('touchend','.J_active',function() {
+                $(this).removeClass('hover');
+            })
+        }
         
     })(func)
 

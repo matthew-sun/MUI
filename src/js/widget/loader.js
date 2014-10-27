@@ -13,6 +13,7 @@ define(function(require, exports, module){
 
         /**
          * 初始化
+         * 
          * @param  {[type]} options 配置选项 {url ,callback ,?ipage}
          */
         
@@ -39,6 +40,7 @@ define(function(require, exports, module){
         
         /**
          * 加载数据
+         * 
          * @param  {[type]}   url      请求后端地址
          * @param  {Function} callback 成功时的回调函数
          * @param  {Function} cb       回调成功时的回调函数（特殊情况需要）
