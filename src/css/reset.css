@@ -2,7 +2,7 @@
     html,body,h1,h2,h3,h4,h5,h6,hr,p,iframe,dl,dt,dd,ul,ol,li,pre,form,fieldset,button,input,textarea,th,td{margin:0;padding:0;}
 
     html{overflow-y:scroll;}
-    body{height:100%; background-color:#f6f6f6;}
+    body{height:100%; background-color:#fff;}
 
     body{font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3"; font-size: 14px; line-height: 1.4;
                                                     min-width: 320px; max-width: 1024px; min-height: 100%; margin: 0 auto; color:#666;}

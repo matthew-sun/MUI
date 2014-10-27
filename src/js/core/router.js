@@ -23,7 +23,6 @@ define(function(require, exports, module){
          */
         
         cache : {} ,
-        tpl : {},
 
         /**
          * 路由控制
@@ -32,6 +31,7 @@ define(function(require, exports, module){
          * @param  {[type]} options {
          *                              templateUrl : ?
          *                              templateData : ? 
+         *                              controller : ?
          *                           }
          * 
          * @return {[type]}         router对象
@@ -96,10 +96,14 @@ define(function(require, exports, module){
             var data = this.cache[path].templateData;
             var me = this;
 
+            me.loading();
+
             $.get(this.dirPath + this.cache[path].templateUrl,
                 function(response){
                     var renderHtml = itpl(response,data);
                     $view.html( renderHtml );
+
+                    me.cache[path].controller && me.cache[path].controller();
                 }
             )
         },
@@ -152,16 +156,20 @@ define(function(require, exports, module){
         onHashChange : function() {
             var me = this;
 
-            window.onhashchange = function() {
+            window.addEventListener('hashchange',function() {
                 me.load(location.hash.substring(1));
-            }
+            },false)
         },
 
         /**
-         * toDo 
          * loading 转场等待渲染页面
          */
-        loading : function() {}
+        loading : function() {
+            var $view = $('#mui_view');
+            var loadingHtml = '<div class="loading_view"></div>';
+
+            $view.html(loadingHtml);
+        }
 
     });
     

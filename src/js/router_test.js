@@ -18,5 +18,4 @@ define(function(require, exports, module){
     }).otherwise({
         templateUrl : 'tpl/404.html'
     })
-
 })
