@@ -1,0 +1,37 @@
+<script src="/gmudoc/views/ueditor/scripts/autocomplete.js"></script>
+<div class="module-list">
+    <label>模块列表</label>
+    <ul>
+        <%for ( var i=0, _module; _module=moduleData[i]; i++ ) {%>
+        <li><%- ViewHelper.getTitle( _module, true ) %></li>
+        <%}%>
+    </ul>
+</div>
+<div id="searchPanel" class="api-list">
+    <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" spellcheck="false">
+    </div>
+    <ul>
+        <%var _anchor=[];%>
+        <%for ( var i=0, api; api=apiList[i]; i++ ) {%>
+        <li>
+            <div>
+                <div><%- api.packageName %></div>
+                <div class="api-wrap">
+                    <ul>
+                        <%for ( var j=0, member; member=api.member[j]; j++ ) {%>
+                        <% _anchor.push( ViewHelper.getPath( member ) ); %>
+                        <li>
+                            <a href="#<%- _anchor[j] %>" class="api-item"><%- ViewHelper.getMethodSignatureHtml( member ) %></a>
+                        </li>
+                        <%}%>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <%}%>
+    </ul>
+</div>
+<script>
+    var _source = <%- JSON.stringify( _anchor ) %>;
+</script>

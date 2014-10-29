@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API文档</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/bootstrap.css">
+        <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/pygments.css" type="text/css">
+        <link rel="stylesheet" href="/gmudoc/views/ueditor/styles/page.css" type="text/css">
+        <script src="/gmudoc/views/ueditor/scripts/jquery-1.10.2.js"></script>
+        <script src="/gmudoc/views/ueditor/scripts/search.js"></script>
+    </head>
+    <body>
+        <div class="page">
+            
+                <div class="member-module">
+    <div class="member-module-name">
+        <h2><a name="UE" class="anchor">UE</a></h2>
+    </div>
+
+    <div class="member-module-desc">
+
+        <div class="member-description">
+            UEditor公用空间，UEditor所有的功能都挂载在该空间下
+        </div>
+
+        
+
+        
+
+    </div>
+
+    <div class="member-box">
+
+        <div class="member-module-info">
+
+            
+
+            
+
+            <!-- class list start -->
+<fileset>
+    <legend>类列表</legend>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>类名</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+        
+            <tr>
+                <td>
+                    <a href="#UE.Editor">Editor</a>
+                </td>
+                <td>
+                    UEditor的核心类，为用户提供与编辑器交互的接口。
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+</fileset>
+<!-- class list end -->
+
+        </div>
+
+        <div class="clazz-member-list">
+
+            
+            <fileset>
+                <legend>模块成员详细描述(<a href="#UE">UE</a>)</legend>
+
+                <div class="member-box">
+                    
+
+                    
+
+                    
+                    
+                        <div class="member-clazz">
+    <div class="member-clazz-name">
+        <h3><a name="UE.Editor" class="anchor">Editor</a></h3>
+    </div>
+
+    <div class="member-clazz-desc">
+
+        <div class="member-description">
+            UEditor的核心类，为用户提供与编辑器交互的接口。
+        </div>
+
+        
+
+        
+
+    </div>
+
+    <div class="member-box">
+        <div class="member-clazz-info">
+
+            
+
+            <!-- event list start -->
+<fileset>
+    <legend>事件列表</legend>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>事件名</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td>
+                    <a href="#UE.Editor:ready">ready</a>
+                </td>
+                <td>
+                    编辑器准备就绪后会触发该事件
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <a href="#UE.Editor:selectionchange">selectionchange</a>
+                </td>
+                <td>
+                    每当编辑器内部选区发生改变后， 将触发该事件
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+</fileset>
+<!-- event list end -->
+
+            <!-- constructor list start -->
+<fileset>
+    <legend>构造器列表</legend>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>方法签名</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td>
+                    <a href="#UE.Editor:Editor()">Editor()</a>
+                </td>
+                <td>
+                    以默认参数构建一个编辑器实例
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <a href="#UE.Editor:Editor(PlainObject)">Editor(PlainObject setting)</a>
+                </td>
+                <td>
+                    以给定的参数集合创建一个编辑器对象，对于未指定的参数，将应用默认参数。
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+</fileset>
+<!-- constructor list end -->
+
+            <!-- method list start -->
+<fileset>
+    <legend>方法列表</legend>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>方法签名</th>
+                <th>静态</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td>
+                    <a href="#UE.Editor:ready(Function)">ready(Function fn)</a>
+                </td>
+                <td>
+                    否
+                </td>
+                <td>
+                    编辑器对外提供的监听ready事件的接口， 通过调用该方法，达到的效果与监听ready事件是一致的
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <a href="#UE.Editor:setOpt(String,*)">setOpt(String key, * val)</a>
+                </td>
+                <td>
+                    否
+                </td>
+                <td>
+                    以attributeName - attributeValue的方式设置编辑器的配置项，以覆盖编辑器的默认选项值
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <a href="#UE.Editor:setOpt(PlainObject)">setOpt(PlainObject settings)</a>
+                </td>
+                <td>
+                    否
+                </td>
+                <td>
+                    以key-value集合的方式设置编辑器的配置项，以覆盖编辑器的默认选项值
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <a href="#UE.Editor:destroy()">destroy()</a>
+                </td>
+                <td>
+                    否
+                </td>
+                <td>
+                    销毁编辑器实例对象
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <a href="#UE.Editor:getContent()">getContent()</a>
+                </td>
+                <td>
+                    否
+                </td>
+                <td>
+                    获取编辑器的内容
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <a href="#UE.Editor:getContent(Function)">getContent(Function fn)</a>
+                </td>
+                <td>
+                    否
+                </td>
+                <td>
+                    获取编辑器的内容。 可以通过参数定义编辑器内置的判空规则
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+</fileset>
+<!-- method list end -->
+
+        </div>
+
+        <div class="clazz-member-list">
+
+            
+            <fileset>
+                <legend>类成员详细描述(<a href="#UE.Editor">Editor</a>)</legend>
+
+                <div class="member-box">
+                    
+                    
+                    
+
+                    
+                    
+                        <div class="member member-event">
+    <div class="member-event-name">
+        <h4><a name="UE.Editor:ready" class="anchor">ready</a></h4>
+    </div>
+
+    <div class="member-event-desc">
+
+        <div class="member-description">
+            编辑器准备就绪后会触发该事件
+        </div>
+
+        
+
+        
+
+    </div>
+
+    <div class="member-event-info">
+
+        
+        <!-- example start -->
+        <fileset>
+            <legend>示例</legend>
+            
+                <div class="example">
+                    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre> <span class="nx">editor</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span> <span class="s1">&#39;ready&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">editor</span> <span class="p">)</span> <span class="p">{</span>
+
+     <span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span> <span class="s1">&#39;focus&#39;</span> <span class="p">);</span>
+
+ <span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table>
+                </div>
+            
+        </fileset>
+        <!-- example end -->
+        
+
+    </div>
+</div>
+                    
+                        <div class="member member-event">
+    <div class="member-event-name">
+        <h4><a name="UE.Editor:selectionchange" class="anchor">selectionchange</a></h4>
+    </div>
+
+    <div class="member-event-desc">
+
+        <div class="member-description">
+            每当编辑器内部选区发生改变后， 将触发该事件
+        </div>
+
+        
+
+        
+        <!-- warning start -->
+        
+        <ul class="member-warning">
+            <li class="alert alert-danger">
+                警告： 该事件的触发非常频繁，不建议在该事件的处理过程中做重量级的处理
+            </li>
+        </ul>
+        
+        <!-- warning end -->
+        
+
+    </div>
+
+    <div class="member-event-info">
+
+        
+        <!-- example start -->
+        <fileset>
+            <legend>示例</legend>
+            
+                <div class="example">
+                    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre> <span class="nx">editor</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span> <span class="s1">&#39;selectionchange&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">editor</span> <span class="p">)</span> <span class="p">{</span>
+
+     <span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span> <span class="s1">&#39;bold&#39;</span> <span class="p">);</span>
+
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table>
+                </div>
+            
+        </fileset>
+        <!-- example end -->
+        
+
+    </div>
+</div>
+                    
+                    
+
+                    
+                    
+                        <div class="member member-constructor">
+    <div class="member-constructor-signature">
+        <h4><a name="UE.Editor:Editor()" class="anchor">Editor()</a></h4>
+    </div>
+    <div class="member-constructor-desc">
+
+        <div class="member-description">
+            以默认参数构建一个编辑器实例
+        </div>
+
+        
+
+        
+
+    </div>
+    <div class="member-constructor-info">
+
+        
+
+        
+        <!-- example start -->
+        <fileset>
+            <legend>示例</legend>
+            
+                <div class="example">
+                    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre> <span class="kd">var</span> <span class="nx">editor</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UE</span><span class="p">.</span><span class="nx">Editor</span><span class="p">();</span>
+ <span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s1">&#39;blod&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table>
+                </div>
+            
+        </fileset>
+        <!-- example end -->
+        
+    </div>
+</div>
+                    
+                        <div class="member member-constructor">
+    <div class="member-constructor-signature">
+        <h4><a name="UE.Editor:Editor(PlainObject)" class="anchor">Editor(<a href="#PlainObject">PlainObject</a> setting)</a></h4>
+    </div>
+    <div class="member-constructor-desc">
+
+        <div class="member-description">
+            以给定的参数集合创建一个编辑器对象，对于未指定的参数，将应用默认参数。
+        </div>
+
+        
+
+        
+
+    </div>
+    <div class="member-constructor-info">
+
+        
+        <!-- param start -->
+        <fileset>
+            <legend>参数列表</legend>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>参数名</th>
+                        <th>类型</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>
+                            setting
+                        </td>
+                        <td>
+                            <a href="#PlainObject">PlainObject</a>
+                        </td>
+                        <td>
+                            创建编辑器的参数
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </fileset>
+        <!-- param end -->
+        
+
+        
+        <!-- example start -->
+        <fileset>
+            <legend>示例</legend>
+            
+                <div class="example">
+                    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre> <span class="kd">var</span> <span class="nx">editor</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UE</span><span class="p">.</span><span class="nx">Editor</span><span class="p">();</span>
+ <span class="nx">editor</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s1">&#39;blod&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table>
+                </div>
+            
+        </fileset>
+        <!-- example end -->
+        
+    </div>
+</div>
+                    
+                    
+
+                    
+                    
+                        <div class="member member-method">
+    <div class="member-method-signature">
+        <h4><a name="UE.Editor:ready(Function)" class="anchor">ready(<a href="#Function">Function</a> fn)</a></h4>
+        <div class="member-flag">
+        
+        </div>
+    </div>
+
+    <div class="member-method-desc">
+
+        <div class="member-description">
+            编辑器对外提供的监听ready事件的接口， 通过调用该方法，达到的效果与监听ready事件是一致的
+        </div>
+
+        
+
+        
+
+    </div>
+
+    <div class="member-method-info">
+
+        
+        <!-- param start -->
+        <fileset>
+            <legend>参数列表</legend>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>参数名</th>
+                        <th>类型</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>
+                            fn
+                        </td>
+                        <td>
+                            <a href="#Function">Function</a>
+                        </td>
+                        <td>
+                            编辑器ready之后所执行的回调, 如果在注册事件之前编辑器已经ready，将会
+ 立即触发该回调。
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </fileset>
+        <!-- param end -->
+        
+
+        
+
+        
+        <!-- example start -->
+        <fileset>
+            <legend>示例</legend>
+            
+                <div class="example">
+                    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre> <span class="nx">editor</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">editor</span> <span class="p">)</span> <span class="p">{</span>
+
+     <span class="nx">editor</span><span class="p">.</span><span class="nx">setContent</span><span class="p">(</span><span class="s1">&#39;初始化完毕&#39;</span><span class="p">);</span>
+
+ <span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table>
+                </div>
+            
+        </fileset>
+        <!-- example end -->
+        
+    </div>
+</div>
+                    
+                        <div class="member member-method">
+    <div class="member-method-signature">
+        <h4><a name="UE.Editor:setOpt(String,*)" class="anchor">setOpt(<a href="#String">String</a> key, <a href="#*">*</a> val)</a></h4>
+        <div class="member-flag">
+        
+        </div>
+    </div>
+
+    <div class="member-method-desc">
+
+        <div class="member-description">
+            以attributeName - attributeValue的方式设置编辑器的配置项，以覆盖编辑器的默认选项值
+        </div>
+
+        
+
+        
+        <!-- warning start -->
+        
+        <ul class="member-warning">
+            <li class="alert alert-danger">
+                警告： 该方法仅供编辑器构造函数调用，其他任何方法不能调用。
+            </li>
+        </ul>
+        
+        <!-- warning end -->
+        
+
+    </div>
+
+    <div class="member-method-info">
+
+        
+        <!-- param start -->
+        <fileset>
+            <legend>参数列表</legend>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>参数名</th>
+                        <th>类型</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>
+                            key
+                        </td>
+                        <td>
+                            <a href="#String">String</a>
+                        </td>
+                        <td>
+                            编辑器的可接受的选项名称
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            val
+                        </td>
+                        <td>
+                            <a href="#*">*</a>
+                        </td>
+                        <td>
+                            该选项可接受的值
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </fileset>
+        <!-- param end -->
+        
+
+        
+
+        
+        <!-- example start -->
+        <fileset>
+            <legend>示例</legend>
+            
+                <div class="example">
+                    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre> <span class="nx">editor</span><span class="p">.</span><span class="nx">setOpt</span><span class="p">(</span> <span class="s1">&#39;initContent&#39;</span><span class="p">,</span> <span class="s1">&#39;欢迎使用编辑器&#39;</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table>
+                </div>
+            
+        </fileset>
+        <!-- example end -->
+        
+    </div>
+</div>
+                    
+                        <div class="member member-method">
+    <div class="member-method-signature">
+        <h4><a name="UE.Editor:setOpt(PlainObject)" class="anchor">setOpt(<a href="#PlainObject">PlainObject</a> settings)</a></h4>
+        <div class="member-flag">
+        
+        </div>
+    </div>
+
+    <div class="member-method-desc">
+
+        <div class="member-description">
+            以key-value集合的方式设置编辑器的配置项，以覆盖编辑器的默认选项值
+        </div>
+
+        
+
+        
+        <!-- warning start -->
+        
+        <ul class="member-warning">
+            <li class="alert alert-danger">
+                警告： 该方法仅供编辑器构造函数调用，其他任何方法不能调用。
+            </li>
+        </ul>
+        
+        <!-- warning end -->
+        
+
+    </div>
+
+    <div class="member-method-info">
+
+        
+        <!-- param start -->
+        <fileset>
+            <legend>参数列表</legend>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>参数名</th>
+                        <th>类型</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>
+                            settings
+                        </td>
+                        <td>
+                            <a href="#PlainObject">PlainObject</a>
+                        </td>
+                        <td>
+                            编辑器的可接受的选项的key-value集合
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </fileset>
+        <!-- param end -->
+        
+
+        
+
+        
+        <!-- example start -->
+        <fileset>
+            <legend>示例</legend>
+            
+                <div class="example">
+                    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre> <span class="nx">editor</span><span class="p">.</span><span class="nx">setOpt</span><span class="p">(</span> <span class="p">{</span>
+     <span class="s1">&#39;initContent&#39;</span><span class="o">:</span> <span class="s1">&#39;欢迎使用编辑器&#39;</span>
+ <span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table>
+                </div>
+            
+        </fileset>
+        <!-- example end -->
+        
+    </div>
+</div>
+                    
+                        <div class="member member-method">
+    <div class="member-method-signature">
+        <h4><a name="UE.Editor:destroy()" class="anchor">destroy()</a></h4>
+        <div class="member-flag">
+        
+        </div>
+    </div>
+
+    <div class="member-method-desc">
+
+        <div class="member-description">
+            销毁编辑器实例对象
+        </div>
+
+        
+
+        
+
+    </div>
+
+    <div class="member-method-info">
+
+        
+
+        
+
+        
+        <!-- example start -->
+        <fileset>
+            <legend>示例</legend>
+            
+                <div class="example">
+                    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre> <span class="nx">editor</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+</pre></div>
+</td></tr></table>
+                </div>
+            
+        </fileset>
+        <!-- example end -->
+        
+    </div>
+</div>
+                    
+                        <div class="member member-method">
+    <div class="member-method-signature">
+        <h4><a name="UE.Editor:getContent()" class="anchor">getContent()</a></h4>
+        <div class="member-flag">
+        
+        </div>
+    </div>
+
+    <div class="member-method-desc">
+
+        <div class="member-description">
+            获取编辑器的内容
+        </div>
+
+        
+
+        
+        <!-- warning start -->
+        
+        <ul class="member-warning">
+            <li class="alert alert-danger">
+                警告： 该方法获取到的是经过编辑器内置的过滤规则进行过滤后得到的内容
+            </li>
+        </ul>
+        
+        <!-- warning end -->
+        
+
+    </div>
+
+    <div class="member-method-info">
+
+        
+
+        
+
+        
+        <!-- example start -->
+        <fileset>
+            <legend>示例</legend>
+            
+                <div class="example">
+                    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre> <span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="nx">editor</span><span class="p">.</span><span class="nx">getContent</span><span class="p">();</span>
+</pre></div>
+</td></tr></table>
+                </div>
+            
+        </fileset>
+        <!-- example end -->
+        
+    </div>
+</div>
+                    
+                        <div class="member member-method">
+    <div class="member-method-signature">
+        <h4><a name="UE.Editor:getContent(Function)" class="anchor">getContent(<a href="#Function">Function</a> fn)</a></h4>
+        <div class="member-flag">
+        
+        </div>
+    </div>
+
+    <div class="member-method-desc">
+
+        <div class="member-description">
+            获取编辑器的内容。 可以通过参数定义编辑器内置的判空规则
+        </div>
+
+        
+        <!-- remind start -->
+        
+        <ul class="member-remind">
+            <li class="alert alert-success">
+                提示： 该方法在处理包含有初始化内容的时候能起到很好的作用。
+            </li>
+        </ul>
+        
+        <!-- remind end -->
+        
+
+        
+        <!-- warning start -->
+        
+        <ul class="member-warning">
+            <li class="alert alert-danger">
+                警告： 该方法获取到的是经过编辑器内置的过滤规则进行过滤后得到的内容
+            </li>
+        </ul>
+        
+        <!-- warning end -->
+        
+
+    </div>
+
+    <div class="member-method-info">
+
+        
+        <!-- param start -->
+        <fileset>
+            <legend>参数列表</legend>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>参数名</th>
+                        <th>类型</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>
+                            fn
+                        </td>
+                        <td>
+                            <a href="#Function">Function</a>
+                        </td>
+                        <td>
+                            自定的判空规则， 要求该方法返回一个boolean类型的值，
+                      代表当前编辑器的内容是否空，
+                      如果返回true， 则该方法将直接返回空字符串；如果返回false，则编辑器将返回
+                      经过内置过滤规则处理后的内容。
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </fileset>
+        <!-- param end -->
+        
+
+        
+
+        
+        <!-- example start -->
+        <fileset>
+            <legend>示例</legend>
+            
+                <div class="example">
+                    <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre> <span class="c1">// editor 是一个编辑器的实例</span>
+ <span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="nx">editor</span><span class="p">.</span><span class="nx">getContent</span><span class="p">(</span> <span class="kd">function</span> <span class="p">(</span> <span class="nx">editor</span> <span class="p">)</span> <span class="p">{</span>
+
+      <span class="k">return</span> <span class="nx">editor</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">===</span> <span class="s1">&#39;欢迎使用UEditor&#39;</span><span class="p">;</span>
+
+ <span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</td></tr></table>
+                </div>
+            
+        </fileset>
+        <!-- example end -->
+        
+    </div>
+</div>
+                    
+                    
+                </div>
+            </fileset>
+            
+
+        </div>
+    </div>
+
+</div>
+                    
+                    
+                </div>
+
+            </fileset>
+            
+
+        </div>
+
+    </div>
+
+</div>
+            
+                <div class="member-module">
+    <div class="member-module-name">
+        <h2><a name="UEDITOR_CONFIG" class="anchor">UEDITOR_CONFIG</a></h2>
+    </div>
+
+    <div class="member-module-desc">
+
+        <div class="member-description">
+            UEditor配置项集合
+        </div>
+
+        
+
+        
+
+    </div>
+
+    <div class="member-box">
+
+        <div class="member-module-info">
+
+            <!-- property list start -->
+<fileset>
+    <legend>属性列表</legend>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>属性名</th>
+                <th>类型</th>
+                <th>静态</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td>
+                    <a href="#UEDITOR_CONFIG.UEDITOR_HOME_URL">UEDITOR_HOME_URL</a>
+                </td>
+                <td>
+                    String
+                </td>
+                <td>
+                    是
+                </td>
+                <td>
+                    编辑器的根路径
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <a href="#UEDITOR_CONFIG.imageUrl">imageUrl</a>
+                </td>
+                <td>
+                    String
+                </td>
+                <td>
+                    是
+                </td>
+                <td>
+                    图片上传的后端接口
+                </td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <a href="#UEDITOR_CONFIG.imagePath">imagePath</a>
+                </td>
+                <td>
+                    String
+                </td>
+                <td>
+                    是
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+</fileset>
+<!-- property list end -->
+
+            
+
+            
+
+        </div>
+
+        <div class="clazz-member-list">
+
+            
+            <fileset>
+                <legend>模块成员详细描述(<a href="#UEDITOR_CONFIG">UEDITOR_CONFIG</a>)</legend>
+
+                <div class="member-box">
+                    
+                    <div class="member member-property">
+    <div class="member-property-signature">
+        <h4><a name="UEDITOR_CONFIG.UEDITOR_HOME_URL" class="anchor">UEDITOR_HOME_URL</a></h4>
+        <div class="member-flag">
+        
+            <span class="label label-primary">静态</span>
+        
+        </div>
+    </div>
+
+    <div class="member-property-desc">
+
+        <div class="member-description">
+            编辑器的根路径
+        </div>
+
+        
+
+        
+
+    </div>
+
+    <div class="member-property-info">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>类型</th>
+                    <th>默认值</th>
+                    <th>描述</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                        
+                            由编辑器自动计算出的根路径地址
+                        
+                    </td>
+                    <td>
+                        编辑器的根路径
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+
+    </div>
+</div><div class="member member-property">
+    <div class="member-property-signature">
+        <h4><a name="UEDITOR_CONFIG.imageUrl" class="anchor">imageUrl</a></h4>
+        <div class="member-flag">
+        
+            <span class="label label-primary">静态</span>
+        
+        </div>
+    </div>
+
+    <div class="member-property-desc">
+
+        <div class="member-description">
+            图片上传的后端接口
+        </div>
+
+        
+
+        
+
+    </div>
+
+    <div class="member-property-info">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>类型</th>
+                    <th>默认值</th>
+                    <th>描述</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                        
+                            UEditor提供的默认接口路径
+
+ * PHP下的默认路径是: UEDITOR_HOME_URL／php/imageUp.php
+                        
+                    </td>
+                    <td>
+                        图片上传的后端接口
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+
+    </div>
+</div><div class="member member-property">
+    <div class="member-property-signature">
+        <h4><a name="UEDITOR_CONFIG.imagePath" class="anchor">imagePath</a></h4>
+        <div class="member-flag">
+        
+            <span class="label label-primary">静态</span>
+        
+        </div>
+    </div>
+
+    <div class="member-property-desc">
+
+        <div class="member-description">
+            
+        </div>
+
+        
+
+        
+
+    </div>
+
+    <div class="member-property-info">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>类型</th>
+                    <th>默认值</th>
+                    <th>描述</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                        
+                            
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+
+    </div>
+</div>
+                    
+
+                    
+                    
+                    
+
+                    
+                </div>
+
+            </fileset>
+            
+
+        </div>
+
+    </div>
+
+</div>
+            
+        </div>
+        <div class="nav">
+            <script src="/gmudoc/views/ueditor/scripts/autocomplete.js"></script>
+<div class="module-list">
+    <label>模块列表</label>
+    <ul>
+        
+        <li><a href="#UE">UE</a></li>
+        
+        <li><a href="#UEDITOR_CONFIG">UEDITOR_CONFIG</a></li>
+        
+    </ul>
+</div>
+<div id="searchPanel" class="api-list">
+    <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" spellcheck="false">
+    </div>
+    <ul>
+        
+        
+        <li>
+            <div>
+                <div>UE.Editor</div>
+                <div class="api-wrap">
+                    <ul>
+                        
+                        
+                        <li>
+                            <a href="#UE.Editor:ready" class="api-item">ready()</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="#UE.Editor:selectionchange" class="api-item">selectionchange()</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="#UE.Editor:Editor()" class="api-item">Editor()</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="#UE.Editor:Editor(PlainObject)" class="api-item">Editor(PlainObject setting)</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="#UE.Editor:ready(Function)" class="api-item">ready(Function fn)</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="#UE.Editor:setOpt(String,*)" class="api-item">setOpt(String key, * val)</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="#UE.Editor:setOpt(PlainObject)" class="api-item">setOpt(PlainObject settings)</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="#UE.Editor:destroy()" class="api-item">destroy()</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="#UE.Editor:getContent()" class="api-item">getContent()</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="#UE.Editor:getContent(Function)" class="api-item">getContent(Function fn)</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <div>
+                <div>UEDITOR_CONFIG</div>
+                <div class="api-wrap">
+                    <ul>
+                        
+                        
+                        <li>
+                            <a href="#UE.Editor:ready" class="api-item">UEDITOR_HOME_URL()</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="#UE.Editor:selectionchange" class="api-item">imageUrl()</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="#UE.Editor:Editor()" class="api-item">imagePath()</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </li>
+        
+    </ul>
+</div>
+<script>
+    var _source = ["UE.Editor:ready","UE.Editor:selectionchange","UE.Editor:Editor()","UE.Editor:Editor(PlainObject)","UE.Editor:ready(Function)","UE.Editor:setOpt(String,*)","UE.Editor:setOpt(PlainObject)","UE.Editor:destroy()","UE.Editor:getContent()","UE.Editor:getContent(Function)","UEDITOR_CONFIG.UEDITOR_HOME_URL","UEDITOR_CONFIG.imageUrl","UEDITOR_CONFIG.imagePath"];
+</script>
+        </div>
+        <a id="elevator" class="go-to-top" href="#">
+            <img src="/gmudoc/views/ueditor/images/up.png">
+        </a>
+    </body>
+</html>

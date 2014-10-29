@@ -1,0 +1,1 @@
+define("src/source/js/config/mock_ajax",[],function(){var a={};return a});

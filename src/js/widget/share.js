@@ -9,7 +9,7 @@
 define(function(require, exports, module){
     var $ = require('../zepto/zepto');
     var func = require('../core/func');
-    var itpl = require('./core/itpl');
+    var itpl = require('../core/itpl');
     
     var defaults = {
         shareDom : '#J_share' ,

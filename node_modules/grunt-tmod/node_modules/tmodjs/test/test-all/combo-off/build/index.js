@@ -1,0 +1,2 @@
+/*TMODJS:{"version":8,"md5":"f8c225edd0fd3d0d5ca75bf53e01ee76"}*/
+template("index",function(a,b){"use strict";var c=this,d=(c.$helpers,function(d,e){e=e||a;var f=c.$include(d,e,b);return i+=f}),e=c.$escape,f=a.title,g=c.$each,h=a.list,i=(a.$value,a.$index,"");return d("./public/header"),i+=' <div id="main"> <h3>\u6807\u9898 ',i+=e(f),i+="</h3> <ul> ",g(h,function(a){i+=' <li><a href="',i+=e(a.url),i+='">',i+=e(a.title),i+="</a></li> "}),i+=" </ul> </div> ",d("./public/footer"),new String(i)});

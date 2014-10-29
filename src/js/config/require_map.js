@@ -9,11 +9,11 @@
 var map = {
 
     core : {
-        func : ['zepto',]
+        func : ['zepto'],
         fastclick : [] ,
         itpl : [] ,
         router : ['zepto','func','itpl']
-    }
+    },
 
     widget : {
         iscroll : [] ,

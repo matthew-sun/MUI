@@ -5,7 +5,7 @@
  * @description : CLASS || UTIls || EVENT || HTTP || MOBILE 
  * @date : 2014/08/25
  */
-define(function(require, exports, module){
+define(function(require, exports, module) {
     var $ = require('../zepto/zepto');
 
     /**

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TemplateJS - 调用模板演示</title>
+</head>
+
+<body>
+
+<div id="doc">loading..</div>
+
+<script src="./helper/build/template.js"></script>
+<script>
+// 演示JSON数据
+var data = {
+	time: (new Date).toString(),
+};
+
+// 加载index模板
+document.getElementById('doc').innerHTML = template('index', data);
+</script>
+</body>
+</html>
+
+
+
