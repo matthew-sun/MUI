@@ -1,18 +1,22 @@
 /**
- * @author : matthewsun
- * @mail : matthew-sun@foxmail.com
- * @description : MUI框架的路由控制
- * @date : 2014/10/21
+ * @file router
+ * @import zepto.js,func.js,template.js
+ * @module MUI
  */
+
+/**
+ * router.js，MUI框架的路由控制。
+ * @class router
+ */
+
 define(function(require, exports, module){
     var $ = require('../zepto/zepto');
     var func = require('./func');
-    var itpl = require('./itpl');
+    var template = require('../template/template');
 
     var Router = func.Class({
 
-        init : function(dirPath) {
-            this.dirPath = dirPath || '../src/js/';
+        init : function() {
             this.onHashChange();
         },
 
@@ -29,7 +33,7 @@ define(function(require, exports, module){
          * 
          * @param  {[type]} path    hash地址
          * @param  {[type]} options {
-         *                              templateUrl : ?
+         *                              templateId : ?
          *                              templateData : ? 
          *                              controller : ?
          *                           }
@@ -104,37 +108,17 @@ define(function(require, exports, module){
         render : function(path) {
 
             var $view = $('#mui_view');
-            var data = this.cache[path].templateData;
+            var data = this.cache[path].templateData || {};
             var me = this;
 
             // 载入loading画面
             me.loading();
 
-            $.get(me.dirPath + me.cache[path].templateUrl,
-                function(response){
-                    var renderHtml = itpl(response,data);
-                    $view.html( renderHtml );
+            var renderHtml = template(me.cache[path].templateId,data);
+            $view.html( renderHtml );
 
-                    me.cache[path].controller && me.cache[path].controller();
-                }
-            )
+            me.cache[path].controller && me.cache[path].controller();
 
-        },
-
-        /**
-         * 获取模板数据
-         * 
-         * @param  {[type]} path 路径
-         * @return {[type]}      html模板
-         */
-        
-        fetchTpl : function(path) {
-            var me = this;
-            $.get(this.dirPath + me.cache[path].templateUrl,
-                function(response){
-                    return response;
-                }
-            )
         },
 
         /**
@@ -189,3 +173,64 @@ define(function(require, exports, module){
     return Router;
     
 })
+
+/**
+ * @method when
+ * @grammar router().when(url, {templateId : ?, templateData : ? , controller : ?})
+ * @param {String} url 浏览器hash路由值，url#后的值，默认 url#{0,1} 跳转至url#/。
+ * @param {Json} options {templateId(必选) : ?, templateData(可选) : ?, controller(可选) : ?}
+ * @desc 当window的url的hash值是什么时，选择什么模板进行渲染。
+ * - templateId   ： 模板ID
+ * - templateData ： 模板数据
+ * - controller   ： 模板加载之后，执行的js回调
+ * @example
+ * var INDEX_DATA = {
+ *     title : '首页' ,
+ *     list : [
+ *         {
+ *             url : 'http://www.fehouse.com' ,
+ *             title : '前端家园'
+ *         },
+ *         {
+ *             url : 'http://www.1717wam.cn' ,
+ *             title : '1717wan'
+ *         }
+ *     ]
+ * }
+ *
+ * function hello() {
+ *     alert('你好，小明！');
+ * }
+ *
+ * router().when('/',{
+ *     templateId : 'index',
+ *     templateData : INDEX_DATA
+ * }).when('/about',{
+ *     templateId : 'about',
+ *     controller : hello
+ * })
+ * 
+ */
+
+/**
+ * @method otherwise
+ * @grammar router().otherwise({templateId : ?, templateData : ? , controller : ?})
+ * @param {Json} options {templateId(必选) : ?, templateData(可选) : ?, controller(可选) : ?}
+ * @desc 路由默认跳转地址
+ * @example
+ * router().otherwise({
+ *     templateId : '404'
+ * })
+ */
+
+/**
+ * @method dataChangeReload
+ * @grammar router().dataChangeReload(path, data)
+ * @param {String} path 模板id
+ * @param {Json} data 模板数据
+ * @desc 数据发生改变时重新渲染
+ * @example
+ * router().dataChangeReload('index',{
+ *     title : 'title has changed.'
+ * })
+ */

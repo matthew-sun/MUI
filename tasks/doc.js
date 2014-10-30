@@ -36,7 +36,8 @@ module.exports = function( grunt ) {
                 cwd: '',
                 files: [],
                 theme: 'gmu',
-                outputDir: './doc'
+                outputDir: './doc',
+                title: 'MUI API 文档'
             }),
             done = this.async();
 

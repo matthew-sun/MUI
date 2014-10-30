@@ -808,3 +808,17 @@ define(function(require, exports, module){
 
 	return FastClick;
 })
+
+/**
+ * @class fastclick
+ * @desc
+ * fastclick专为移动端而生，具体解决了移动端的点透bug
+ * fastclick项目地址[source](https://github.com/ftlabs/fastclick)
+ * @method FastClick
+ * @example
+ * var FastClick = require('./core/fastclick');
+ *
+ * window.addEventListener('load', function() {
+ *     FastClick.attach(document.body);
+ * }, false);
+ */

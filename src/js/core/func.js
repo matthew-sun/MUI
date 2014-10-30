@@ -1,26 +1,79 @@
 /**
- * @author : matthewsun
- * @mail : matthew-sun@foxmail.com
- * @description : 封装一些与业务无关的底层方法
- * @description : CLASS || UTIls || EVENT || HTTP || MOBILE 
- * @date : 2014/08/25
+ * @file func，封装了一些与业务无关的底层方法，分为了CLASS || UTIls || EVENT || HTTP || MOBILE 这几大模块
+ * @import zepto.js
+ * @module MUI
  */
+
+/**
+ * MUI是基于zepto的轻量级mobile UI组件库，因为1717wan移动站的业务需要而诞生。
+ * MUI由[matthewsun](http://www.fehouse.com/)开发，基于开源MIT协议，支持商业和非商业用户的免费使用和任意修改，您可以在[MUI](https://github.com/matthew-sun/MUI)上快速了解此项目。
+ *
+ * ###Quick Start###
+ * + **官网：**https://github.com/matthew-sun/MUI
+ *
+ *
+ * @module MUI
+ * @title MUI API 文档
+ */
+
+/**
+ * func.js，封装了一些与业务无关的底层方法，分为了CLASS || UTIls || EVENT || HTTP || MOBILE 这几大模块。
+ * @class func
+ */
+
 define(function(require, exports, module) {
     var $ = require('../zepto/zepto');
 
     /**
      * CLASS model
-     * @return {[type]} [description]
      */
     
     var func = (function() {
         
         var _func = {};
-
+        
         /**
          * 创建Class
-         * 范式：Class(superClass,subClass) || Class(subClass)
          * 创建类的API，统一自调用init方法
+         * @method CLass
+         * @grammar func.Class(superClass,subClass) || func.Class(subClass)
+         * @param {Object} [superClass] 如果使用继承方法，第一个参数为父类。
+         * @param {Object} [subClass] 如果使用继承方法，第二个参数为子类；如果只创建一个类，不需要继承，那么参数即为需要创建的类。
+         * @example
+         * var func = require(./core/func);
+         *     
+         * // 创建一个类
+         * var newClass = func.Class({
+         *     init : function() {
+         *         ...
+         *     },
+         *     bindEvents : function() {
+         *         ...
+         *     }
+         * });
+         *     
+         * // 调用这个类，使用此函数会自动new一个类，并自己调用类中的init方法
+         * newClass();
+         *     
+         * // 调用这个类的内部方法。
+         * newClass().bindEvents();
+         *     
+         * // 使用继承
+         * var superClass = func.Class({
+         *     init : function() {
+         *         ...
+         *     },
+         *     bindEvents : function() {
+         *         ...
+         *     }
+         * });
+         * var newClass = func.Class(superClass,{
+         *     init : function() {
+         *         handleEvents : function() {
+         *             ...
+         *         }
+         *     }
+         * });
          */
         
         _func.Class = function() {
@@ -76,19 +129,27 @@ define(function(require, exports, module) {
         return _func;
     })()
 
-
-
     /**
      * UTIls model
      */
     
     ;(function(func) {
-
+        
         /**
          * 获取键值
-         * 
-         * @param  {[type]} obj [description]
-         * @return {[Array]}     [description]
+         * @method keys
+         * @grammar keys(obj)
+         * @param {JSON} obj JSON对象
+         * @return {Array} JSON的所有键值
+         * @example
+         * var func = require(./core/func);
+         *     
+         * var json = {
+         *     'name' : '小明' ,
+         *     'age' : 18
+         * };
+         * console.log(keys(json));
+         * // == >> ['name','age']
          */
 
         func.keys = function(obj) {
@@ -104,26 +165,37 @@ define(function(require, exports, module) {
          * hover hack
          * 移动端模拟手触摸时的效果
          */
+        
+        /**
+         * 移动端模拟手触摸时的效果
+         * @method bindActiveLink
+         * @grammar bindActiveLink(activeClass)
+         * @param {String} [activeClass] 需要绑定dom的class名字，若不填，则默认绑定J_active
+         * @example
+         * var func = require(./core/func);
+         * // 默认绑定J_avtive
+         * func.bindActiveLink();
+         * // 绑定指定Class
+         * func.bindActiveLink('J_whichDomIWantToBind');
+         */
 
-        func.bindActiveLink = function() {
+        func.bindActiveLink = function(activeClass) {
+            var activeClass = activeClass || 'J_active';
             var $body = $('body');
 
-            $body.on('touchstart','.J_active',function() {
+            $body.on('touchstart','.'+activeClass,function() {
                 $(this).addClass('hover');
             })
-            $body.on('touchend','.J_active',function() {
+            $body.on('touchend','.'+activeClass,function() {
                 $(this).removeClass('hover');
             })
         }
 
         /**
-         * @name fix
+         * @method fix
          * @grammar fix($obj, options)
-         * @param  DOM $obj 绑定fix的zepto对象
-         * @param JSON {top:0, left:0}
-         * @desc 固顶fix方法，对不支持position:fixed的设备上将元素position设为absolute，
-         * 在每次scrollstop时根据opts参数设置当前显示的位置，类似fix效果。
-         *
+         * @param {Dom} $obj 绑定fix的zepto对象
+         * @param {Json} options {top:0, left:0}
          * Options:
          * - ''top'' {Number}: 距离顶部的px值
          * - ''left'' {Number}: 距离左侧的px值
@@ -135,7 +207,9 @@ define(function(require, exports, module) {
          * div.fix({top:0, right:0}); //将div固顶在右上角
          * div.fix({bottom:0, left:0}); //将div固顶在左下角
          * div.fix({bottom:0, right:0}); //将div固顶在右下角
-         *
+         * @desc 固顶fix方法，对不支持position:fixed的设备上将元素position设为absolute，
+         * 在每次scrollstop时根据opts参数设置当前显示的位置，类似fix效果。
+         * 
          */
 
         func.fix = function($obj, opts) {
@@ -177,19 +251,22 @@ define(function(require, exports, module) {
     ;(function(func) {
 
         var _cache = {};
-
-        /**
-         * 广播事件
-         * 目标: 为了尽可能的减少模块之间业务逻辑的耦合度, 而开发了这个eventbus, 主要用于业务逻辑的事件传递
-         * 使用规范: 每个js模块尽可能通过事件去通信, 减少模块之间的直接调用和依赖(耦合)
-         */
         
         /**
-         * 派发
+         * @method fire
+         * 广播事件
+         * + 目标: 为了尽可能的减少模块之间业务逻辑的耦合度, 而开发了这个eventbus, 主要用于业务逻辑的事件传递
+         * + 使用规范: 每个js模块尽可能通过事件去通信, 减少模块之间的直接调用和依赖(耦合)
+         * + fire -> 事件派发
          * @param  {[type]} type 事件类型
          * @param  {[type]} data 回调数据
-         * @return {[type]}      [description]
+         * @example
+         * var func = require(./core/func);
+         * // 派发自定义事件
+         * func.fire('customEvent');
+         * func.fire('customEvent', data1, data2, ...);
          */
+        
         func.fire = function(type, data) {
             var listeners = _cache[type],
                 len = 0;
@@ -211,11 +288,18 @@ define(function(require, exports, module) {
         }
 
         /**
-         * 订阅广播事件
-         * @param  {[type]}   types     事件类型，支持,分隔符
+         * @method on
+         * on -> 订阅广播事件
+         * @param  {[type]} type 事件类型，支持,分隔符
          * @param  {Function} callback 回调函数
          * @param  {[type]}   scope    回调函数上下文
          * @return {[type]}            this
+         * @example
+         * var func = require(./core/func);
+         * // 注册自定义事件
+         * func.on('customEvent', function() {
+         *     callback();
+         * },scope);
          */
         
         func.on = function(types, callback, scope) {
@@ -241,12 +325,18 @@ define(function(require, exports, module) {
             }
             return this;
         }
-
+           
         /**
-         * 退订
-         * @param  {[type]}   type     [description]
+         * @method un
+         * un -> 退订广播事件
+         * @param  {[type]}   type     事件类型
          * @param  {Function} callback 假如传入则移出传入的监控事件，否则移出全部
-         * @return {[type]}            [description]
+         * @param  {[type]}   scope    回调函数上下文
+         * @return {[type]}            this
+         * @example
+         * var func = require(./core/func);
+         * // 退订自定义事件
+         * func.un('customEvent');
          */
         
         func.un = function(type, callback, scope) {
@@ -270,6 +360,15 @@ define(function(require, exports, module) {
             }
             return this;
         }
+           
+        /**
+         * @method removeAll
+         * removeAll -> 退订所有广播事件
+         * @example
+         * var func = require(./core/func);
+         * // 退订所有广播事件
+         * func.removeAll();
+         */
 
         func.removeAll = function() {
             _cache = {};
@@ -285,8 +384,17 @@ define(function(require, exports, module) {
     ;(function(func) {
 
         /**
-         * loader
+         * @method loader
+         * @desc 对jsonp的简单封装
+         * @param  {[type]} opts jsonp的配置项
+         * @example
+         * var func = require(./core/func);
+         * func.loader({
+         *     url : ? ,
+         *     success : ?
+         * })
          */
+        
         func.loader = function(opts){
             opts = $.extend({
                 dataType : "jsonp",
@@ -301,11 +409,14 @@ define(function(require, exports, module) {
             
             $.ajax(opts);
         }
-
+        
         /**
-         * 获取cookie
-         * @param  {[type]} name   [cookie名]
-         * @return {[type]} String [cookie值]
+         * @method getCookie
+         * @param {String} name cookie的名字
+         * @return {String} cookie值
+         * @example
+         * var func = require(./core/func);
+         * func.getCookie('username');
          */
         
         func.getCookie = function(name) {
@@ -324,12 +435,15 @@ define(function(require, exports, module) {
         }
 
         /**
-         * 设置cookie值
-         * @param {[type]} name  [cookie名字]
-         * @param {[type]} value [cookie值]
-         * @param {[type]} iDay  [过期时间，单位：天]
+         * @method setCooKie
+         * @param {String} name  cookie名字
+         * @param {[type]} value cookie值
+         * @param {Number} iDay  过期时间，单位：天
+         * @example
+         * var func = require('./core/func');
+         * func.setCookie('username', 'Xiao Ming', 7);
          */
-        
+
         func.setCookie = function(name, value, iDay) {
             if(iDay!==false){
 
@@ -343,8 +457,11 @@ define(function(require, exports, module) {
         }
 
         /**
-         * 移除Cookie
-         * @param  {[type]} name [Cookie名]
+         * @method removeCookie
+         * @param {String} name Cookie名
+         * @example
+         * var func = require('./core/func');
+         * func.removeCookie('username');
          */
         
         func.removeCookie = function (name) {
@@ -357,9 +474,21 @@ define(function(require, exports, module) {
      */
     
     ;(function(func) {
-
+        
         /**
-         * 判断浏览器版本
+         * @method Device
+         * @desc 判断浏览器版本
+         * @return {Json} 返回浏览器的版本信息和系统的版本信息
+         * @example
+         * var func = require('./core/func');
+         * // 返回ios系统
+         * func.Device().os.ios 
+         * // 返回uc
+         * func.Device().os.uc
+         * // 返回qq
+         * func.Device().os.qq
+         * // 返回baidu
+         * func.Device().browser.baidu
          */
         
         func.Device = function() {

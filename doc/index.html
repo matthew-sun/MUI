@@ -1,0 +1,851 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="./css/codemirror.css">
+    <link type="text/css" href="./css/style.css" rel="stylesheet"/>
+    <link id="theme-link" type="text/css" href="./css/purple.css" rel="stylesheet"/>
+    <title>MUI API 文档</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="themes-list">
+        <h3 class="invisible">切换主题</h3>
+        <ul>
+            
+            <li class="on"><a href="javascript:void(0)" class="purple">purple</a></li>
+
+            
+            <li ><a href="javascript:void(0)" class="blue">blue</a></li>
+
+            
+            <li ><a href="javascript:void(0)" class="dark">dark</a></li>
+
+            
+            <li ><a href="javascript:void(0)" class="orange">orange</a></li>
+
+            
+        </ul>
+    </div>
+    <div id="sidebar">
+    <div class="nav">
+        <ul>
+            <li><a class="home" title="前往主页" href="http://gmu.baidu.com">主页</a></li>
+            <li><a class="text-large" title="大号字体" href="#">大号字体</a></li>
+            <li><a class="text-small" title="小号字体" href="#">小号字体</a></li>
+            <li><a class="collapse" title="展开或收起" href="#">展开或收起</a></li>
+        </ul>
+    </div>
+    <div id="search">
+        <input disabled="disabled" results="5"  type="search" placeholder="Search" autosave="searchdoc" autocomplete="off">
+    </div>
+    <div class="sidebar-list">
+        <div id="result"></div>
+        <div id="static_list">
+            
+            <a class="doc_g_t" href="#MUI">MUI</a>
+            <hr />
+
+            
+            <div class="collapsble">
+                <div class="toc_title">
+                    <a href="#MUI_fastclick">fastclick</a>
+                    <span class="icon"></span>
+                </div>
+                <div class="toc_section">
+                    <ul>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_fastclick_FastClick">FastClick</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="collapsble">
+                <div class="toc_title">
+                    <a href="#MUI_func">func</a>
+                    <span class="icon"></span>
+                </div>
+                <div class="toc_section">
+                    <ul>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_func_CLass">CLass</a>
+                        </li>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_func_keys">keys</a>
+                        </li>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_func_bindActiveLink">bindActiveLink</a>
+                        </li>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_func_fix">fix</a>
+                        </li>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_func_fire">fire</a>
+                        </li>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_func_on">on</a>
+                        </li>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_func_un">un</a>
+                        </li>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_func_removeAll">removeAll</a>
+                        </li>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_func_loader">loader</a>
+                        </li>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_func_getCookie">getCookie</a>
+                        </li>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_func_setCooKie">setCooKie</a>
+                        </li>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_func_removeCookie">removeCookie</a>
+                        </li>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_func_Device">Device</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="collapsble">
+                <div class="toc_title">
+                    <a href="#MUI_router">router</a>
+                    <span class="icon"></span>
+                </div>
+                <div class="toc_section">
+                    <ul>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_router_when">when</a>
+                        </li>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_router_otherwise">otherwise</a>
+                        </li>
+                        
+                        <li class="method">
+                            <a class="" href="#MUI_router_dataChangeReload">dataChangeReload</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+    <div class="container">
+    <!--[if IE]>
+    <div class="notice">
+        此API文档，在IE浏览器下表现不佳，请适用非IE浏览器，推荐适用<a href="http://www.google.cn/intl/zh-CN/chrome/browser/">Chrome</a>（谷歌浏览器）!
+    </div>
+    <![endif]-->
+
+    
+        
+<h2 id="MUI">MUI API 文档</h2>
+
+
+<div class="doc_desc">
+    <p>MUI是基于zepto的轻量级mobile UI组件库，因为1717wan移动站的业务需要而诞生。
+MUI由<a href="http://www.fehouse.com/">matthewsun</a>开发，基于开源MIT协议，支持商业和非商业用户的免费使用和任意修改，您可以在<a href="https://github.com/matthew-sun/MUI">MUI</a>上快速了解此项目。</p>
+<h3 id="quick-start">Quick Start</h3>
+<ul>
+<li><strong>官网：</strong><a href="https://github.com/matthew-sun/MUI">https://github.com/matthew-sun/MUI</a></li>
+</ul>
+
+</div>
+<hr />
+
+
+
+<a id="MUI_MUI" ></a>
+
+
+
+
+<div class="clearfix category">
+    <h2 id="MUI_fastclick">fastclick</h2>
+    <div class="fileinfo"><span class="label">文件</span>core/fastclick.js</div>
+    
+
+
+    
+    
+     
+<article class="clearfix method">
+    <h3 id="MUI_fastclick_FastClick"  >FastClick
+        
+    </h3>
+    
+
+    
+
+    
+    
+    
+
+    <p>fastclick专为移动端而生，具体解决了移动端的点透bug
+fastclick项目地址<a href="https://github.com/ftlabs/fastclick">source</a></p>
+
+    
+        <pre><code class="lang-javascript">var FastClick = require(&#39;./core/fastclick&#39;);
+
+window.addEventListener(&#39;load&#39;, function() {
+    FastClick.attach(document.body);
+}, false);</code></pre>
+
+    
+</article>
+  
+
+    
+</div>
+<hr />
+
+<div class="clearfix category">
+    <h2 id="MUI_func">func</h2>
+    <div class="fileinfo"><span class="label">文件</span>core/func.js<span class="label deps">依赖</span>zepto.js</div>
+    <p>func.js，封装了一些与业务无关的底层方法，分为了CLASS || UTIls || EVENT || HTTP || MOBILE 这几大模块。</p>
+
+
+
+    
+    
+     
+<article class="clearfix method">
+    <h3 id="MUI_func_CLass"  >CLass
+        
+    </h3>
+    
+
+    
+
+    
+    <ul class="signature">
+        
+        <li>func.Class(superClass,subClass) || func.Class(subClass)
+            
+            
+        </li>
+    </ul>
+    
+    
+        <p>参数: </p>
+        <ul class="params-list"><li><span class="meta"><code>superClass</code> {Object} [可选]</span><p>如果使用继承方法，第一个参数为父类。</p>
+</li><li><span class="meta"><code>subClass</code> {Object} [可选]</span><p>如果使用继承方法，第二个参数为子类；如果只创建一个类，不需要继承，那么参数即为需要创建的类。</p>
+</li></ul>
+    
+    
+
+    <p>创建Class
+创建类的API，统一自调用init方法</p>
+
+    
+        <pre><code class="lang-javascript">var func = require(./core/func);
+
+// 创建一个类
+var newClass = func.Class({
+    init : function() {
+        ...
+    },
+    bindEvents : function() {
+        ...
+    }
+});
+
+// 调用这个类，使用此函数会自动new一个类，并自己调用类中的init方法
+newClass();
+
+// 调用这个类的内部方法。
+newClass().bindEvents();
+
+// 使用继承
+var superClass = func.Class({
+    init : function() {
+        ...
+    },
+    bindEvents : function() {
+        ...
+    }
+});
+var newClass = func.Class(superClass,{
+    init : function() {
+        handleEvents : function() {
+            ...
+        }
+    }
+});</code></pre>
+
+    
+</article>
+
+<article class="clearfix method">
+    <h3 id="MUI_func_keys"  >keys
+        
+    </h3>
+    
+
+    
+
+    
+    <ul class="signature">
+        
+        <li>keys(obj)
+            
+            
+        </li>
+    </ul>
+    
+    
+        <p>参数: </p>
+        <ul class="params-list"><li><span class="meta"><code>obj</code> {JSON}</span><p>JSON对象</p>
+</li></ul>
+    
+    
+        <p>返回值: </p>
+        <ul class="params-list"><li><span class="meta"> {Array}</span><p>JSON的所有键值</p>
+</li></ul>
+    
+
+    <p>获取键值</p>
+
+    
+        <pre><code class="lang-javascript">var func = require(./core/func);
+
+var json = {
+    &#39;name&#39; : &#39;小明&#39; ,
+    &#39;age&#39; : 18
+};
+console.log(keys(json));
+// == &gt;&gt; [&#39;name&#39;,&#39;age&#39;]</code></pre>
+
+    
+</article>
+
+<article class="clearfix method">
+    <h3 id="MUI_func_bindActiveLink"  >bindActiveLink
+        
+    </h3>
+    
+
+    
+
+    
+    <ul class="signature">
+        
+        <li>bindActiveLink(activeClass)
+            
+            
+        </li>
+    </ul>
+    
+    
+        <p>参数: </p>
+        <ul class="params-list"><li><span class="meta"><code>activeClass</code> {String} [可选]</span><p>需要绑定dom的class名字，若不填，则默认绑定J_active</p>
+</li></ul>
+    
+    
+
+    <p>移动端模拟手触摸时的效果</p>
+
+    
+        <pre><code class="lang-javascript">var func = require(./core/func);
+// 默认绑定J_avtive
+func.bindActiveLink();
+// 绑定指定Class
+func.bindActiveLink(&#39;J_whichDomIWantToBind&#39;);</code></pre>
+
+    
+</article>
+
+<article class="clearfix method">
+    <h3 id="MUI_func_fix"  >fix
+        
+    </h3>
+    
+
+    
+
+    
+    <ul class="signature">
+        
+        <li>fix($obj, options)
+            
+            
+        </li>
+    </ul>
+    
+    
+        <p>参数: </p>
+        <ul class="params-list"><li><span class="meta"><code>$obj</code> {Dom}</span><p>绑定fix的zepto对象</p>
+</li><li><span class="meta"><code>options</code> {Json}</span><p>{top:0, left:0}</p>
+</li></ul>
+    
+    
+
+    <p>固顶fix方法，对不支持position:fixed的设备上将元素position设为absolute，
+在每次scrollstop时根据opts参数设置当前显示的位置，类似fix效果。</p>
+
+    
+        <pre><code class="lang-javascript">var div = $(&#39;div&#39;);
+div.fix({top:0, left:0}); //将div固顶在左上角
+div.fix({top:0, right:0}); //将div固顶在右上角
+div.fix({bottom:0, left:0}); //将div固顶在左下角
+div.fix({bottom:0, right:0}); //将div固顶在右下角</code></pre>
+
+    
+</article>
+
+<article class="clearfix method">
+    <h3 id="MUI_func_fire"  >fire
+        
+    </h3>
+    
+
+    
+
+    
+    
+        <p>参数: </p>
+        <ul class="params-list"><li><span class="meta"><code>type</code> {[type]}</span><p>事件类型</p>
+</li><li><span class="meta"><code>data</code> {[type]}</span><p>回调数据</p>
+</li></ul>
+    
+    
+
+    <p>广播事件</p>
+<ul>
+<li>目标: 为了尽可能的减少模块之间业务逻辑的耦合度, 而开发了这个eventbus, 主要用于业务逻辑的事件传递</li>
+<li>使用规范: 每个js模块尽可能通过事件去通信, 减少模块之间的直接调用和依赖(耦合)</li>
+<li>fire -&gt; 事件派发</li>
+</ul>
+
+    
+        <pre><code class="lang-javascript">var func = require(./core/func);
+// 派发自定义事件
+func.fire(&#39;customEvent&#39;);
+func.fire(&#39;customEvent&#39;, data1, data2, ...);</code></pre>
+
+    
+</article>
+
+<article class="clearfix method">
+    <h3 id="MUI_func_on"  >on
+        
+    </h3>
+    
+
+    
+
+    
+    
+        <p>参数: </p>
+        <ul class="params-list"><li><span class="meta"><code>type</code> {[type]}</span><p>事件类型，支持,分隔符</p>
+</li><li><span class="meta"><code>callback</code> {Function}</span><p>回调函数</p>
+</li><li><span class="meta"><code>scope</code> {[type]}</span><p>回调函数上下文</p>
+</li></ul>
+    
+    
+        <p>返回值: </p>
+        <ul class="params-list"><li><span class="meta"> {[type]}</span><p>this</p>
+</li></ul>
+    
+
+    <p>on -&gt; 订阅广播事件</p>
+
+    
+        <pre><code class="lang-javascript">var func = require(./core/func);
+// 注册自定义事件
+func.on(&#39;customEvent&#39;, function() {
+    callback();
+},scope);</code></pre>
+
+    
+</article>
+
+<article class="clearfix method">
+    <h3 id="MUI_func_un"  >un
+        
+    </h3>
+    
+
+    
+
+    
+    
+        <p>参数: </p>
+        <ul class="params-list"><li><span class="meta"><code>type</code> {[type]}</span><p>事件类型</p>
+</li><li><span class="meta"><code>callback</code> {Function}</span><p>假如传入则移出传入的监控事件，否则移出全部</p>
+</li><li><span class="meta"><code>scope</code> {[type]}</span><p>回调函数上下文</p>
+</li></ul>
+    
+    
+        <p>返回值: </p>
+        <ul class="params-list"><li><span class="meta"> {[type]}</span><p>this</p>
+</li></ul>
+    
+
+    <p>un -&gt; 退订广播事件</p>
+
+    
+        <pre><code class="lang-javascript">var func = require(./core/func);
+// 退订自定义事件
+func.un(&#39;customEvent&#39;);</code></pre>
+
+    
+</article>
+
+<article class="clearfix method">
+    <h3 id="MUI_func_removeAll"  >removeAll
+        
+    </h3>
+    
+
+    
+
+    
+    
+    
+
+    <p>removeAll -&gt; 退订所有广播事件</p>
+
+    
+        <pre><code class="lang-javascript">var func = require(./core/func);
+// 退订所有广播事件
+func.removeAll();</code></pre>
+
+    
+</article>
+
+<article class="clearfix method">
+    <h3 id="MUI_func_loader"  >loader
+        
+    </h3>
+    
+
+    
+
+    
+    
+        <p>参数: </p>
+        <ul class="params-list"><li><span class="meta"><code>opts</code> {[type]}</span><p>jsonp的配置项</p>
+</li></ul>
+    
+    
+
+    <p>对jsonp的简单封装</p>
+
+    
+        <pre><code class="lang-javascript">var func = require(./core/func);
+func.loader({
+    url : ? ,
+    success : ?
+})</code></pre>
+
+    
+</article>
+
+<article class="clearfix method">
+    <h3 id="MUI_func_getCookie"  >getCookie
+        
+    </h3>
+    
+
+    
+
+    
+    
+        <p>参数: </p>
+        <ul class="params-list"><li><span class="meta"><code>name</code> {String}</span><p>cookie的名字</p>
+</li></ul>
+    
+    
+        <p>返回值: </p>
+        <ul class="params-list"><li><span class="meta"> {String}</span><p>cookie值</p>
+</li></ul>
+    
+
+    
+    
+        <pre><code class="lang-javascript">var func = require(./core/func);
+func.getCookie(&#39;username&#39;);</code></pre>
+
+    
+</article>
+
+<article class="clearfix method">
+    <h3 id="MUI_func_setCooKie"  >setCooKie
+        
+    </h3>
+    
+
+    
+
+    
+    
+        <p>参数: </p>
+        <ul class="params-list"><li><span class="meta"><code>name</code> {String}</span><p>cookie名字</p>
+</li><li><span class="meta"><code>value</code> {[type]}</span><p>cookie值</p>
+</li><li><span class="meta"><code>iDay</code> {Number}</span><p>过期时间，单位：天</p>
+</li></ul>
+    
+    
+
+    
+    
+        <pre><code class="lang-javascript">var func = require(&#39;./core/func&#39;);
+func.setCookie(&#39;username&#39;, &#39;Xiao Ming&#39;, 7);</code></pre>
+
+    
+</article>
+
+<article class="clearfix method">
+    <h3 id="MUI_func_removeCookie"  >removeCookie
+        
+    </h3>
+    
+
+    
+
+    
+    
+        <p>参数: </p>
+        <ul class="params-list"><li><span class="meta"><code>name</code> {String}</span><p>Cookie名</p>
+</li></ul>
+    
+    
+
+    
+    
+        <pre><code class="lang-javascript">var func = require(&#39;./core/func&#39;);
+func.removeCookie(&#39;username&#39;);</code></pre>
+
+    
+</article>
+
+<article class="clearfix method">
+    <h3 id="MUI_func_Device"  >Device
+        
+    </h3>
+    
+
+    
+
+    
+    
+    
+        <p>返回值: </p>
+        <ul class="params-list"><li><span class="meta"> {Json}</span><p>返回浏览器的版本信息和系统的版本信息</p>
+</li></ul>
+    
+
+    <p>判断浏览器版本</p>
+
+    
+        <pre><code class="lang-javascript">var func = require(&#39;./core/func&#39;);
+// 返回ios系统
+func.Device().os.ios 
+// 返回uc
+func.Device().os.uc
+// 返回qq
+func.Device().os.qq
+// 返回baidu
+func.Device().browser.baidu</code></pre>
+
+    
+</article>
+  
+
+    
+</div>
+<hr />
+
+<div class="clearfix category">
+    <h2 id="MUI_router">router</h2>
+    <div class="fileinfo"><span class="label">文件</span>core/router.js<span class="label deps">依赖</span>zepto.js, func.js, template.js</div>
+    <p>router.js，MUI框架的路由控制。</p>
+
+
+
+    
+    
+     
+<article class="clearfix method">
+    <h3 id="MUI_router_when"  >when
+        
+    </h3>
+    
+
+    
+
+    
+    <ul class="signature">
+        
+        <li>router().when(url, {templateId : ?, templateData : ? , controller : ?})
+            
+            
+        </li>
+    </ul>
+    
+    
+        <p>参数: </p>
+        <ul class="params-list"><li><span class="meta"><code>url</code> {String}</span><p>浏览器hash路由值，url#后的值，默认 url#{0,1} 跳转至url#/。</p>
+</li><li><span class="meta"><code>options</code> {Json}</span><p>{templateId(必选) : ?, templateData(可选) : ?, controller(可选) : ?}</p>
+</li></ul>
+    
+    
+
+    <p>当window的url的hash值是什么时，选择什么模板进行渲染。</p>
+<ul>
+<li>templateId   ： 模板ID</li>
+<li>templateData ： 模板数据</li>
+<li>controller   ： 模板加载之后，执行的js回调</li>
+</ul>
+
+    
+        <pre><code class="lang-javascript">var INDEX_DATA = {
+    title : &#39;首页&#39; ,
+    list : [
+        {
+            url : &#39;http://www.fehouse.com&#39; ,
+            title : &#39;前端家园&#39;
+        },
+        {
+            url : &#39;http://www.1717wam.cn&#39; ,
+            title : &#39;1717wan&#39;
+        }
+    ]
+}
+
+function hello() {
+    alert(&#39;你好，小明！&#39;);
+}
+
+router().when(&#39;/&#39;,{
+    templateId : &#39;index&#39;,
+    templateData : INDEX_DATA
+}).when(&#39;/about&#39;,{
+    templateId : &#39;about&#39;,
+    controller : hello
+})</code></pre>
+
+    
+</article>
+
+<article class="clearfix method">
+    <h3 id="MUI_router_otherwise"  >otherwise
+        
+    </h3>
+    
+
+    
+
+    
+    <ul class="signature">
+        
+        <li>router().otherwise({templateId : ?, templateData : ? , controller : ?})
+            
+            
+        </li>
+    </ul>
+    
+    
+        <p>参数: </p>
+        <ul class="params-list"><li><span class="meta"><code>options</code> {Json}</span><p>{templateId(必选) : ?, templateData(可选) : ?, controller(可选) : ?}</p>
+</li></ul>
+    
+    
+
+    <p>路由默认跳转地址</p>
+
+    
+        <pre><code class="lang-javascript">router().otherwise({
+    templateId : &#39;404&#39;
+})</code></pre>
+
+    
+</article>
+
+<article class="clearfix method">
+    <h3 id="MUI_router_dataChangeReload"  >dataChangeReload
+        
+    </h3>
+    
+
+    
+
+    
+    <ul class="signature">
+        
+        <li>router().dataChangeReload(path, data)
+            
+            
+        </li>
+    </ul>
+    
+    
+        <p>参数: </p>
+        <ul class="params-list"><li><span class="meta"><code>path</code> {String}</span><p>模板id</p>
+</li><li><span class="meta"><code>data</code> {Json}</span><p>模板数据</p>
+</li></ul>
+    
+    
+
+    <p>数据发生改变时重新渲染</p>
+
+    
+        <pre><code class="lang-javascript">router().dataChangeReload(&#39;index&#39;,{
+    title : &#39;title has changed.&#39;
+})</code></pre>
+
+    
+</article>
+  
+
+    
+</div>
+<hr />
+
+    
+</div>
+</div>
+<a id="gotopBtn" href="#">GoTop</a>
+<script type="text/javascript">
+//<![CDATA[
+var globalSettings = {
+    themes: {"purple":"./css/purple.css","blue":"./css/blue.css","dark":"./css/dark.css","orange":"./css/orange.css"},
+    activeTheme: 'purple',
+    source: [{"label":"FastClick","value":"FastClick","desc":"fastclick专为移动端而生，具体解决了移动端的点透bu","href":"#MUI_fastclick_FastClick","category":"fastclick"},{"label":"CLass","value":"CLass","desc":"创建Class\n创建类的API，统一自调用init方法","href":"#MUI_func_CLass","category":"func"},{"label":"keys","value":"keys","desc":"获取键值","href":"#MUI_func_keys","category":"func"},{"label":"bindActiveLink","value":"bindActiveLink","desc":"移动端模拟手触摸时的效果","href":"#MUI_func_bindActiveLink","category":"func"},{"label":"fix","value":"fix","desc":"固顶fix方法，对不支持position:fixed的设备上","href":"#MUI_func_fix","category":"func"},{"label":"fire","value":"fire","desc":"\n广播事件\n+ 目标: 为了尽可能的减少模块之间业务逻辑的耦","href":"#MUI_func_fire","category":"func"},{"label":"on","value":"on","desc":"\non -> 订阅广播事件","href":"#MUI_func_on","category":"func"},{"label":"un","value":"un","desc":"\nun -> 退订广播事件","href":"#MUI_func_un","category":"func"},{"label":"removeAll","value":"removeAll","desc":"\nremoveAll -> 退订所有广播事件","href":"#MUI_func_removeAll","category":"func"},{"label":"loader","value":"loader","desc":"对jsonp的简单封装","href":"#MUI_func_loader","category":"func"},{"label":"getCookie","value":"getCookie","desc":"","href":"#MUI_func_getCookie","category":"func"},{"label":"setCooKie","value":"setCooKie","desc":"","href":"#MUI_func_setCooKie","category":"func"},{"label":"removeCookie","value":"removeCookie","desc":"","href":"#MUI_func_removeCookie","category":"func"},{"label":"Device","value":"Device","desc":"判断浏览器版本","href":"#MUI_func_Device","category":"func"},{"label":"when","value":"when","desc":"当window的url的hash值是什么时，选择什么模板进行","href":"#MUI_router_when","category":"router"},{"label":"otherwise","value":"otherwise","desc":"路由默认跳转地址","href":"#MUI_router_otherwise","category":"router"},{"label":"dataChangeReload","value":"dataChangeReload","desc":"数据发生改变时重新渲染","href":"#MUI_router_dataChangeReload","category":"router"}]
+};
+// //]]>
+</script>
+<script type="text/javascript" src="js/depencies.min.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7c62aaa2c3803c6fdbbd95058c165683' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

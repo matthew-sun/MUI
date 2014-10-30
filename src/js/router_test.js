@@ -11,20 +11,37 @@ define(function(require, exports, module){
 
     fastclick.attach(document.body);
 
-    router().when('/',{
-        templateUrl : 'tpl/index.html'
-    }).when('/index',{
-        templateUrl : 'tpl/index.html'
-    }).when('/about',{
-        templateUrl : 'tpl/about.html',
-        controller : hello
-    }).when('/list',{
-        templateUrl : 'tpl/list.html'
-    }).otherwise({
-        templateUrl : 'tpl/404.html'
-    })
-
+    var INDEX_DATA = {
+        title : '首页',
+        list  : [
+            {
+                url : 'http://www.fehouse.com' ,
+                title : '前端家园'
+            },
+            {
+                url : 'http://www.1717wan.cn' ,
+                title : '1717wan'
+            }
+        ]
+    }
+    
     function hello() {
         alert('你好，小明！')
     }
+
+    router().when('/',{
+        templateId : 'index',
+        templateData : INDEX_DATA
+    }).when('/index',{
+        templateId : 'index',
+        templateData : INDEX_DATA
+    }).when('/about',{
+        templateId : 'about',
+        controller : hello
+    }).when('/list',{
+        templateId : 'list'
+    }).otherwise({
+        templateId : '404'
+    })
+
 })
