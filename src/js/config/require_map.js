@@ -1,10 +1,23 @@
 /**
+ * @file require_map
+ * @module MUI
+ */
+
+/**
+ * @class config
+ */
+
+/**
+ * @method map
+ * @desc
  * 记录seajs的依赖关系，
  * 方便组件代码在重构时，api改变，可以不影响业务层
- * @author : matthewsun
- * @date : 2014/10/27
- * @link : matthew-sun@foxmail.com
+ * @example
+ * 比如：router依赖'zepto','func','template'，记录为：
+ *     router : ['zepto','func','template']
+ * 
  */
+
 
 var map = {
 
@@ -12,7 +25,7 @@ var map = {
         func : ['zepto'],
         fastclick : [] ,
         itpl : [] ,
-        router : ['zepto','func','itpl']
+        router : ['zepto','func','template']
     },
 
     widget : {

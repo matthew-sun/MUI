@@ -1,11 +1,59 @@
 /**
- * @author : matthewsun
- * @mail : matthew-sun@foxmail.com
- * @description : 弹窗
- * @description : 范式 => options : {id : ?,pushHtml : ?,type : ?}
- * @required : FastClick
- * @date : 2014/08/19
+ * @file dialog
+ * @module MUI
  */
+
+/**
+ * @class widget
+ */
+
+/**
+ * @method dialog
+ * @grammar dialog({id, pushHtml, type});
+ * @param {Json} options 配置选项
+ * @param {String} id 弹层包裹id
+ * @param {String} pushHtml 如果需要把弹层插入页面，则需要填入pushHtml
+ * @param {String} type 默认展示特效为none，可选参数none, fade
+ * @desc
+ * 弹窗
+ * @example
+ * var dialog = require(./widget/dialog);
+ *
+ * dialog({
+ *     id : 'J_overlay',
+ *     type : 'fade'
+ * });
+ * 
+ */
+
+/**
+ * @method dialog().show
+ * @desc
+ * 弹窗显示
+ * @example
+ * var dialog = require(./widget/dialog);
+ *
+ * dialog({
+ *     id : 'J_overlay',
+ *     type : 'fade'
+ * }).show();
+ * 
+ */
+
+/**
+ * @method dialog().hide
+ * @desc
+ * 弹窗显示
+ * @example
+ * var dialog = require(./widget/dialog);
+ *
+ * dialog({
+ *     id : 'J_overlay',
+ *     type : 'fade'
+ * }).hide();
+ * 
+ */
+
 define(function(require, exports, module){
     var $ = require('../zepto/zepto');
     var func = require('../core/func');

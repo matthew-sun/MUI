@@ -1,3 +1,29 @@
+/**
+ * @file swipe
+ * @module MUI
+ */
+
+/**
+ * swipe.js，swipe，图片轮播。
+ * @class widget
+ */
+
+/**
+ * @method swipe
+ * @desc [swipe项目地址](https://github.com/thebird/Swipe)
+ * @example
+ * var Swipe = require(./widget/swipe);
+ * 
+ * // 具体实现用例，参考项目地址
+ * Swipe(document.getElementById('J_index_slide'), {
+ *     auto: 6000,
+ *     callback : function(index) {
+ *         var $J_index_ctrl = $('#J_index_ctrl');
+ *         $J_index_ctrl.find('span').removeClass('current');
+ *         $J_index_ctrl.find('span').eq(index).addClass('current');
+ *     }
+ * });
+ */
 define(function(require, exports, module){
     /*
      * Swipe 2.0

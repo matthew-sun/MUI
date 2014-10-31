@@ -1,9 +1,25 @@
 /**
+ * @file tab
+ * @module MUI
+ */
+
+/**
+ * @class widget
+ */
+
+/**
+ * @method tab
+ * @desc
  * tab 切换
- * @author matthewsun
- * @date 2014/10/27
- * @description @params options {superClass : ?,subClass : ?,currentClass : ?}
- * @link mattewsun@pptv.com
+ * @param {Json} options {superClass : ?, subClass : ?, currentClass : ?}
+ * @example
+ * var tab = require(./widget/tab);
+ * // currentClass 默认是on，也可通过配置项更改
+ * tab({
+ *    superClass : 'superNav' ,
+ *    subClass : 'suberCon'
+ * })
+ * 
  */
 
 define(function(require, exports, module){

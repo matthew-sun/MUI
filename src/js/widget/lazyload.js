@@ -6,6 +6,33 @@
  * @description : Lazyload({showOnce : true}) 动态执行一次懒加载模块
  * @date : 2014/08/06
  */
+
+/**
+ * @file lazyload
+ * @module MUI
+ */
+
+/**
+ * @class widget
+ */
+
+/**
+ * @method Lazyload
+ * @grammar Lazyload();
+ * @desc
+ * 页面初始化加载图片懒加载模块
+ * @example
+ * html:
+ * 
+ * <img class="lazy" src="真实地址" lazyimg="临时地址">
+ * 
+ * javascript:
+ * 
+ * var lazyload = require(./widget/lazyload);
+ * lazyload();
+ * 
+ */
+
 define(function(require, exports, module){
     var $ = require('../zepto/zepto');
     var func = require('../core/func');

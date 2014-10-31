@@ -6,6 +6,37 @@
  * @date : 2014/08/07
  */
 
+/**
+ * @file share
+ * @module MUI
+ */
+
+/**
+ * @class widget
+ */
+
+/**
+ * @method share
+ * @desc
+ * 移动端自定义分享组件
+ * @grammar new Share(cfg) cfg => {'title' : '?','url' : '?','img' : '?'}
+ * @param {Json} cfg 配置项
+ * @param {String} title 分享的标题
+ * @param {String} url 分享的地址
+ * @param {String} img 分享的图片
+ * @todo 整理api调用形式
+ * @example
+ * var Share = require(./widget/share)
+ * 
+ *  var cfg = {
+ *      title : '哇哦！！！我已经成功绑定1717wan.cn游戏直播，可第一时间追寻喜爱选手的直播及视频哦。爱游戏，爱视频，爱直播快来绑定吧！！！关注微信号“test1717wan”即可。',
+ *      url : 'http://m.1717wan.cn',
+ *      img : 'http://static.vas.pptv.com/vas/assets/app/1717wan/wap/'+ vers +'/images/share/share.png'
+ *  }
+ *  new Share(cfg);
+ * 
+ */
+
 define(function(require, exports, module){
     var $ = require('../zepto/zepto');
     var func = require('../core/func');

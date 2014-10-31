@@ -1,3 +1,22 @@
+/**
+ * @file iscroll
+ * @module MUI
+ */
+
+/**
+ * iscroll.js，iscroll，支持无线端滚动。
+ * @class widget
+ */
+
+/**
+ * @method iscroll
+ * @desc [iscroll项目地址](https://github.com/cubiq/iscroll)
+ * @example
+ * var IScroll = require(./widget/iscroll);
+ * // 具体实现用例，参考项目地址
+ * var myScroll = new IScroll('#wrapper');
+ */
+
 /*! iScroll v5.1.3 ~ (c) 2008-2014 Matteo Spinelli ~ http://cubiq.org/license */
 (function (window, document, Math) {
 var rAF = window.requestAnimationFrame  ||

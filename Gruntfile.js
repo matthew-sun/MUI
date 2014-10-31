@@ -176,7 +176,7 @@ module.exports = function(grunt){
      	doc: {
             options: {
                 cwd: 'src/js',
-                files: [ 'core/*.js','widget/*.js','config/*.js','*.js'],
+                files: [ 'core/*.js','config/*.js','widget/*.js','*.js'],
                 theme: 'gmu',
                 outputDir: './doc'
             }
