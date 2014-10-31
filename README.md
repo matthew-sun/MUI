@@ -1,10 +1,3 @@
-MUI
-===
-
-漫猫移动端UI框架
-
-API：[漫猫移动UI](http://www.fehouse.com/usr/themes/fe/labs/mui/)
-
 ##MUI##
 MUI是基于zepto的轻量级mobile UI组件库，因为1717wan移动站的业务需要而诞生。 MUI由[matthewsun](http://www.fehouse.com/)开发，基于开源MIT协议，支持商业和非商业用户的免费使用和任意修改，您可以在[MUI](https://github.com/matthew-sun/MUI)上快速了解此项目。
 
