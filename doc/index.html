@@ -802,6 +802,7 @@ func.Device().browser.baidu</code></pre>
 <li>templateId   ： 模板ID</li>
 <li>templateData ： 模板数据</li>
 <li>controller   ： 模板加载之后，执行的js回调</li>
+<li>title        ： 页面的标题</li>
 </ul>
 
     
@@ -825,7 +826,8 @@ function hello() {
 
 router().when(&#39;/&#39;,{
     templateId : &#39;index&#39;,
-    templateData : INDEX_DATA
+    templateData : INDEX_DATA,
+    title : &#39;index&#39;
 }).when(&#39;/about&#39;,{
     templateId : &#39;about&#39;,
     controller : hello

@@ -36,6 +36,7 @@ define(function(require, exports, module){
          *                              templateId : ?
          *                              templateData : ? 
          *                              controller : ?
+         *                              title : ?
          *                           }
          * 
          * @return {[type]}         router对象
@@ -114,6 +115,10 @@ define(function(require, exports, module){
             // 载入loading画面
             me.loading();
 
+            if( this.cache[path].title ) {
+                document.title = this.cache[path].title;
+            }
+
             var renderHtml = template(me.cache[path].templateId,data);
             $view.html( renderHtml );
 
@@ -183,6 +188,7 @@ define(function(require, exports, module){
  * - templateId   ： 模板ID
  * - templateData ： 模板数据
  * - controller   ： 模板加载之后，执行的js回调
+ * - title        ： 页面的标题
  * @example
  * var INDEX_DATA = {
  *     title : '首页' ,
@@ -204,7 +210,8 @@ define(function(require, exports, module){
  *
  * router().when('/',{
  *     templateId : 'index',
- *     templateData : INDEX_DATA
+ *     templateData : INDEX_DATA,
+ *     title : 'index'
  * }).when('/about',{
  *     templateId : 'about',
  *     controller : hello

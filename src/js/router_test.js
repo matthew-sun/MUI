@@ -31,17 +31,22 @@ define(function(require, exports, module){
 
     router().when('/',{
         templateId : 'index',
-        templateData : INDEX_DATA
+        templateData : INDEX_DATA,
+        title : 'index'
     }).when('/index',{
         templateId : 'index',
-        templateData : INDEX_DATA
+        templateData : INDEX_DATA,
+        title : 'index'
     }).when('/about',{
         templateId : 'about',
-        controller : hello
+        controller : hello,
+        title : 'about'
     }).when('/list',{
-        templateId : 'list'
+        templateId : 'list',
+        title : 'list'
     }).otherwise({
-        templateId : '404'
+        templateId : '404',
+        title : '404'
     })
 
 })
