@@ -4,13 +4,13 @@
  */
 
 /**
- * iscroll.js，iscroll，支持无线端滚动。
  * @class widget
  */
 
 /**
  * @method iscroll
  * @desc [iscroll项目地址](https://github.com/cubiq/iscroll)
+ * iscroll.js，iscroll，支持无线端滚动。
  * @example
  * var IScroll = require(./widget/iscroll);
  * // 具体实现用例，参考项目地址

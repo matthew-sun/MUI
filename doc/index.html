@@ -1009,7 +1009,7 @@ $.ajax({
 <div class="clearfix category">
     <h2 id="MUI_widget">widget</h2>
     <div class="fileinfo"><span class="label">文件</span>widget/tab.js</div>
-    <p>swipe.js，swipe，图片轮播。</p>
+    <p>UI组件层</p>
 
 
 
@@ -1118,7 +1118,8 @@ dialog({
     
     
 
-    <p><a href="https://github.com/cubiq/iscroll">iscroll项目地址</a></p>
+    <p><a href="https://github.com/cubiq/iscroll">iscroll项目地址</a>
+iscroll.js，iscroll，支持无线端滚动。</p>
 
     
         <pre><code class="lang-javascript">var IScroll = require(./widget/iscroll);
@@ -1174,7 +1175,7 @@ lazyload();</code></pre>
     
     <ul class="signature">
         
-        <li>new Share(cfg) cfg 
+        <li>share(cfg) cfg 
             <span class="return">⇒  {&#39;title&#39; : &#39;?&#39;,&#39;url&#39; : &#39;?&#39;,&#39;img&#39; : &#39;?&#39;}</span>
             
         </li>
@@ -1193,14 +1194,14 @@ lazyload();</code></pre>
     <p>移动端自定义分享组件</p>
 
     
-        <pre><code class="lang-javascript">var Share = require(./widget/share)
+        <pre><code class="lang-javascript">var share = require(./widget/share)
 
  var cfg = {
      title : &#39;哇哦！！！我已经成功绑定1717wan.cn游戏直播，可第一时间追寻喜爱选手的直播及视频哦。爱游戏，爱视频，爱直播快来绑定吧！！！关注微信号“test1717wan”即可。&#39;,
      url : &#39;http://m.1717wan.cn&#39;,
      img : &#39;http://static.vas.pptv.com/vas/assets/app/1717wan/wap/&#39;+ vers +&#39;/images/share/share.png&#39;
  }
- new Share(cfg);</code></pre>
+ share(cfg);</code></pre>
 
     
 </article>
@@ -1217,7 +1218,8 @@ lazyload();</code></pre>
     
     
 
-    <p><a href="https://github.com/thebird/Swipe">swipe项目地址</a></p>
+    <p><a href="https://github.com/thebird/Swipe">swipe项目地址</a>
+swipe.js，swipe，图片轮播。</p>
 
     
         <pre><code class="lang-javascript">var Swipe = require(./widget/swipe);

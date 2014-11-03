@@ -4,13 +4,14 @@
  */
 
 /**
- * swipe.js，swipe，图片轮播。
  * @class widget
+ * @desc  UI组件层
  */
 
 /**
  * @method swipe
  * @desc [swipe项目地址](https://github.com/thebird/Swipe)
+ * swipe.js，swipe，图片轮播。
  * @example
  * var Swipe = require(./widget/swipe);
  * 
