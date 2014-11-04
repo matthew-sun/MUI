@@ -3,7 +3,7 @@ MUI是基于zepto的轻量级mobile UI组件库，因为1717wan移动站的业�
 
 ###Quick Start###
 + **DEMO：**http://www.fehouse.com/usr/themes/fe/labs/mui/demo/demo.html<br>
-	手机扫码访问demo查看：	![二维码地址][url]
+	![二维码地址][url]
 + **API：**http://www.fehouse.com/usr/themes/fe/labs/mui/doc/
 
 ###命令行工具###
