@@ -13,6 +13,9 @@ define(function(require, exports, module){
     var lazyload = require('./widget/lazyload');
 
     fastclick.attach(document.body);
+    window.addEventListener('load',function() {
+        setTimeout(scrollTo,0,0,1);
+    },false);
 
     var demoController = func.Class({
         init : function() {
