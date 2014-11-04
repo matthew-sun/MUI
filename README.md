@@ -2,7 +2,8 @@
 MUI是基于zepto的轻量级mobile UI组件库，因为1717wan移动站的业务需要而诞生。 MUI由[matthewsun](http://www.fehouse.com/)开发，基于开源MIT协议，支持商业和非商业用户的免费使用和任意修改，您可以在[MUI](https://github.com/matthew-sun/MUI)上快速了解此项目。
 
 ###Quick Start###
-+ **DEMO：**http://www.fehouse.com/usr/themes/fe/labs/mui/demo/demo.html（建议使用手机访问）
++ **DEMO：**http://www.fehouse.com/usr/themes/fe/labs/mui/demo/demo.html<br>
+	手机扫码访问demo查看：	![二维码地址][url]
 + **API：**http://www.fehouse.com/usr/themes/fe/labs/mui/doc/
 
 ###命令行工具###
@@ -41,4 +42,5 @@ MUI是基于zepto的轻量级mobile UI组件库，因为1717wan移动站的业�
 
 ###感谢伟大的开源社区给予本项目的支持###
 
+[url]:./url.png
 
