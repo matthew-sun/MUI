@@ -1,2 +1,2 @@
-/*TMODJS:{"version":2,"md5":"67204303d9ac83777801540c3b5bcb0a"}*/
-template('public/footer','<div id="footer"> <p class=\'time\'>2014/10/30</p> </div>');
+/*TMODJS:{"version":6,"md5":"0d06b32564b2b89f3975ca8e72fdd3f5"}*/
+template('public/footer','<footer class="demo_footer" id="J_demoFooter"> <ul> <li> <a href="#/plugin">plugin</a> </li> <li> <a href="#/dialog">dialog</a> </li> <li> <a href="#/lazyload">lazyload</a> </li> </ul> </footer>');

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>mui-demo</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../src/css/reset.css">
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+    <div id="mui_view"></div>
+</body>
+<script src="../src/seajs/2.2.0/sea.js"></script>
+<script>
+    (function (isPkg) {
+        var path;
+        isPkg ? path='source/js' : path='js';
+
+        seajs.config({
+            base : "../"
+        });
+
+        seajs.use("../src/"+ path +"/demo.js");
+    })(true);
+</script>
+</html>

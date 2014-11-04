@@ -13,7 +13,7 @@
  * @desc [swipe项目地址](https://github.com/thebird/Swipe)
  * swipe.js，swipe，图片轮播。
  * @example
- * var Swipe = require(./widget/swipe);
+ * var Swipe = require('./widget/swipe');
  * 
  * // 具体实现用例，参考项目地址
  * Swipe(document.getElementById('J_index_slide'), {

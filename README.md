@@ -2,8 +2,8 @@
 MUI是基于zepto的轻量级mobile UI组件库，因为1717wan移动站的业务需要而诞生。 MUI由[matthewsun](http://www.fehouse.com/)开发，基于开源MIT协议，支持商业和非商业用户的免费使用和任意修改，您可以在[MUI](https://github.com/matthew-sun/MUI)上快速了解此项目。
 
 ###Quick Start###
-+ **仓库：**https://github.com/matthew-sun/MUI
-+ **API：**http://www.fehouse.com/usr/themes/fe/labs/mui/
++ **DEMO：**http://www.fehouse.com/usr/themes/fe/labs/mui/demo/demo.html（建议使用手机访问）
++ **API：**http://www.fehouse.com/usr/themes/fe/labs/mui/doc/
 
 ###命令行工具###
 命令行工具提供代码打包，自动css sprites，模板预构建和生成文档功能。
@@ -15,8 +15,8 @@ MUI是基于zepto的轻量级mobile UI组件库，因为1717wan移动站的业�
 + grunt (npm install -g grunt-cli)
 
 ####1. 如何使用####
-请参考官方[API文档](http://www.fehouse.com/usr/themes/fe/labs/mui/)
-或者简单的跑一下examples文件夹下的例子。
+请参考官方[API文档](http://www.fehouse.com/usr/themes/fe/labs/mui/doc/)
+或者简单的跑一下demo文件夹下的例子。
 
 ####2. 打包代码####
 `grunt build-mui`
@@ -28,7 +28,7 @@ MUI是基于zepto的轻量级mobile UI组件库，因为1717wan移动站的业�
 `grunt build-tmod`
 
 ####5. 生成文档####
-通过以下命令可以在doc目录下生成静态文档，也可以[在线查看](http://www.fehouse.com/usr/themes/fe/labs/mui/);
+通过以下命令可以在doc目录下生成静态文档，也可以[在线查看](http://www.fehouse.com/usr/themes/fe/labs/mui/doc/);
 `grunt build-doc`
 
 ###反馈bug###

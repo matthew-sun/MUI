@@ -40,7 +40,7 @@ define(function(require, exports, module) {
          * @param {Object} [superClass] 如果使用继承方法，第一个参数为父类。
          * @param {Object} [subClass] 如果使用继承方法，第二个参数为子类；如果只创建一个类，不需要继承，那么参数即为需要创建的类。
          * @example
-         * var func = require(./core/func);
+         * var func = require('./core/func');
          *     
          * // 创建一个类
          * var newClass = func.Class({
@@ -142,7 +142,7 @@ define(function(require, exports, module) {
          * @param {JSON} obj JSON对象
          * @return {Array} JSON的所有键值
          * @example
-         * var func = require(./core/func);
+         * var func = require('./core/func');
          *     
          * var json = {
          *     'name' : '小明' ,
@@ -172,7 +172,7 @@ define(function(require, exports, module) {
          * @grammar bindActiveLink(activeClass)
          * @param {String} [activeClass] 需要绑定dom的class名字，若不填，则默认绑定J_active
          * @example
-         * var func = require(./core/func);
+         * var func = require('./core/func');
          * // 默认绑定J_avtive
          * func.bindActiveLink();
          * // 绑定指定Class
@@ -261,7 +261,7 @@ define(function(require, exports, module) {
          * @param  {[type]} type 事件类型
          * @param  {[type]} data 回调数据
          * @example
-         * var func = require(./core/func);
+         * var func = require('./core/func');
          * // 派发自定义事件
          * func.fire('customEvent');
          * func.fire('customEvent', data1, data2, ...);
@@ -295,7 +295,7 @@ define(function(require, exports, module) {
          * @param  {[type]}   scope    回调函数上下文
          * @return {[type]}            this
          * @example
-         * var func = require(./core/func);
+         * var func = require('./core/func');
          * // 注册自定义事件
          * func.on('customEvent', function() {
          *     callback();
@@ -334,7 +334,7 @@ define(function(require, exports, module) {
          * @param  {[type]}   scope    回调函数上下文
          * @return {[type]}            this
          * @example
-         * var func = require(./core/func);
+         * var func = require('./core/func');
          * // 退订自定义事件
          * func.un('customEvent');
          */
@@ -365,7 +365,7 @@ define(function(require, exports, module) {
          * @method removeAll
          * removeAll -> 退订所有广播事件
          * @example
-         * var func = require(./core/func);
+         * var func = require('./core/func');
          * // 退订所有广播事件
          * func.removeAll();
          */
@@ -388,7 +388,7 @@ define(function(require, exports, module) {
          * @desc 对jsonp的简单封装
          * @param  {[type]} opts jsonp的配置项
          * @example
-         * var func = require(./core/func);
+         * var func = require('./core/func');
          * func.loader({
          *     url : ? ,
          *     success : ?
@@ -415,7 +415,7 @@ define(function(require, exports, module) {
          * @param {String} name cookie的名字
          * @return {String} cookie值
          * @example
-         * var func = require(./core/func);
+         * var func = require('./core/func');
          * func.getCookie('username');
          */
         

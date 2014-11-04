@@ -17,7 +17,7 @@
  * @desc
  * 弹窗
  * @example
- * var dialog = require(./widget/dialog);
+ * var dialog = require('./widget/dialog');
  *
  * dialog({
  *     id : 'J_overlay',

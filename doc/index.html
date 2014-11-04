@@ -343,7 +343,7 @@ window.addEventListener(&#39;load&#39;, function() {
 创建类的API，统一自调用init方法</p>
 
     
-        <pre><code class="lang-javascript">var func = require(./core/func);
+        <pre><code class="lang-javascript">var func = require(&#39;./core/func&#39;);
 
 // 创建一个类
 var newClass = func.Class({
@@ -412,7 +412,7 @@ var newClass = func.Class(superClass,{
     <p>获取键值</p>
 
     
-        <pre><code class="lang-javascript">var func = require(./core/func);
+        <pre><code class="lang-javascript">var func = require(&#39;./core/func&#39;);
 
 var json = {
     &#39;name&#39; : &#39;小明&#39; ,
@@ -451,7 +451,7 @@ console.log(keys(json));
     <p>移动端模拟手触摸时的效果</p>
 
     
-        <pre><code class="lang-javascript">var func = require(./core/func);
+        <pre><code class="lang-javascript">var func = require(&#39;./core/func&#39;);
 // 默认绑定J_avtive
 func.bindActiveLink();
 // 绑定指定Class
@@ -523,7 +523,7 @@ div.fix({bottom:0, right:0}); //将div固顶在右下角</code></pre>
 </ul>
 
     
-        <pre><code class="lang-javascript">var func = require(./core/func);
+        <pre><code class="lang-javascript">var func = require(&#39;./core/func&#39;);
 // 派发自定义事件
 func.fire(&#39;customEvent&#39;);
 func.fire(&#39;customEvent&#39;, data1, data2, ...);</code></pre>
@@ -556,7 +556,7 @@ func.fire(&#39;customEvent&#39;, data1, data2, ...);</code></pre>
     <p>on -&gt; 订阅广播事件</p>
 
     
-        <pre><code class="lang-javascript">var func = require(./core/func);
+        <pre><code class="lang-javascript">var func = require(&#39;./core/func&#39;);
 // 注册自定义事件
 func.on(&#39;customEvent&#39;, function() {
     callback();
@@ -590,7 +590,7 @@ func.on(&#39;customEvent&#39;, function() {
     <p>un -&gt; 退订广播事件</p>
 
     
-        <pre><code class="lang-javascript">var func = require(./core/func);
+        <pre><code class="lang-javascript">var func = require(&#39;./core/func&#39;);
 // 退订自定义事件
 func.un(&#39;customEvent&#39;);</code></pre>
 
@@ -612,7 +612,7 @@ func.un(&#39;customEvent&#39;);</code></pre>
     <p>removeAll -&gt; 退订所有广播事件</p>
 
     
-        <pre><code class="lang-javascript">var func = require(./core/func);
+        <pre><code class="lang-javascript">var func = require(&#39;./core/func&#39;);
 // 退订所有广播事件
 func.removeAll();</code></pre>
 
@@ -638,7 +638,7 @@ func.removeAll();</code></pre>
     <p>对jsonp的简单封装</p>
 
     
-        <pre><code class="lang-javascript">var func = require(./core/func);
+        <pre><code class="lang-javascript">var func = require(&#39;./core/func&#39;);
 func.loader({
     url : ? ,
     success : ?
@@ -669,7 +669,7 @@ func.loader({
 
     
     
-        <pre><code class="lang-javascript">var func = require(./core/func);
+        <pre><code class="lang-javascript">var func = require(&#39;./core/func&#39;);
 func.getCookie(&#39;username&#39;);</code></pre>
 
     
@@ -969,7 +969,7 @@ router().when(&#39;/&#39;,{
     <p>mock_ajax.js，API 聚合地址页 ( json 数据格式 )，方便API的统一管理。约定：所有的API地址全部从这里获取。</p>
 
     
-        <pre><code class="lang-javascript">var MOCK_AJAX = require(./config/mock_ajax);
+        <pre><code class="lang-javascript">var MOCK_AJAX = require(&#39;./config/mock_ajax&#39;);
 
 $.ajax({
     url : MOCK_AJAX
@@ -1046,7 +1046,7 @@ $.ajax({
     <p>弹窗</p>
 
     
-        <pre><code class="lang-javascript">var dialog = require(./widget/dialog);
+        <pre><code class="lang-javascript">var dialog = require(&#39;./widget/dialog&#39;);
 
 dialog({
     id : &#39;J_overlay&#39;,
@@ -1122,7 +1122,7 @@ dialog({
 iscroll.js，iscroll，支持无线端滚动。</p>
 
     
-        <pre><code class="lang-javascript">var IScroll = require(./widget/iscroll);
+        <pre><code class="lang-javascript">var IScroll = require(&#39;./widget/iscroll&#39;);
 // 具体实现用例，参考项目地址
 var myScroll = new IScroll(&#39;#wrapper&#39;);</code></pre>
 
@@ -1158,7 +1158,7 @@ var myScroll = new IScroll(&#39;#wrapper&#39;);</code></pre>
 
 javascript:
 
-var lazyload = require(./widget/lazyload);
+var lazyload = require(&#39;./widget/lazyload&#39;);
 lazyload();</code></pre>
 
     
@@ -1194,7 +1194,7 @@ lazyload();</code></pre>
     <p>移动端自定义分享组件</p>
 
     
-        <pre><code class="lang-javascript">var share = require(./widget/share)
+        <pre><code class="lang-javascript">var share = require(&#39;./widget/share&#39;)
 
  var cfg = {
      title : &#39;哇哦！！！我已经成功绑定1717wan.cn游戏直播，可第一时间追寻喜爱选手的直播及视频哦。爱游戏，爱视频，爱直播快来绑定吧！！！关注微信号“test1717wan”即可。&#39;,
@@ -1222,7 +1222,7 @@ lazyload();</code></pre>
 swipe.js，swipe，图片轮播。</p>
 
     
-        <pre><code class="lang-javascript">var Swipe = require(./widget/swipe);
+        <pre><code class="lang-javascript">var Swipe = require(&#39;./widget/swipe&#39;);
 
 // 具体实现用例，参考项目地址
 Swipe(document.getElementById(&#39;J_index_slide&#39;), {
@@ -1256,7 +1256,7 @@ Swipe(document.getElementById(&#39;J_index_slide&#39;), {
     <p>tab 切换</p>
 
     
-        <pre><code class="lang-javascript">var tab = require(./widget/tab);
+        <pre><code class="lang-javascript">var tab = require(&#39;./widget/tab&#39;);
 // currentClass 默认是on，也可通过配置项更改
 tab({
    superClass : &#39;superNav&#39; ,

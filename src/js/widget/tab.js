@@ -13,7 +13,7 @@
  * tab 切换
  * @param {Json} options {superClass : ?, subClass : ?, currentClass : ?}
  * @example
- * var tab = require(./widget/tab);
+ * var tab = require('./widget/tab');
  * // currentClass 默认是on，也可通过配置项更改
  * tab({
  *    superClass : 'superNav' ,

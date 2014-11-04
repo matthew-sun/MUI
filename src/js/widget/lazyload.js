@@ -28,7 +28,7 @@
  * 
  * javascript:
  * 
- * var lazyload = require(./widget/lazyload);
+ * var lazyload = require('./widget/lazyload');
  * lazyload();
  * 
  */
@@ -95,6 +95,7 @@ define(function(require, exports, module){
                 var $this = $(this);
                 if( !$this.attr('lazyimg') ) return ;
                 _this.showImg($this);
+
             })
         },
 
