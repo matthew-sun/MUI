@@ -1,0 +1,54 @@
+<div class="member member-event">
+    <div class="member-event-name">
+        <h4><%- ViewHelper.getEventTitleHtml( _self, false ) %></h4>
+    </div>
+
+    <div class="member-event-desc">
+
+        <div class="member-description">
+            <%- desc %>
+        </div>
+
+        <%if ( _self.hasOwnProperty('remind') ) {%>
+        <!-- remind start -->
+        <%for ( var i=0, _remind=null; _remind=remind[i]; i++ ) {%>
+        <ul class="member-remind">
+            <li class="alert alert-success">
+                提示： <%- _remind %>
+            </li>
+        </ul>
+        <%}%>
+        <!-- remind end -->
+        <%}%>
+
+        <%if ( _self.hasOwnProperty('warning') ) {%>
+        <!-- warning start -->
+        <%for ( var i=0, _warning=null; _warning=warning[i]; i++ ) {%>
+        <ul class="member-warning">
+            <li class="alert alert-danger">
+                警告： <%- _warning %>
+            </li>
+        </ul>
+        <%}%>
+        <!-- warning end -->
+        <%}%>
+
+    </div>
+
+    <div class="member-event-info">
+
+        <%if ( _self.hasOwnProperty( 'example' ) ) {%>
+        <!-- example start -->
+        <fileset>
+            <legend>示例</legend>
+            <%for ( var i=0, exp=null; exp = example[i]; i++ ) {%>
+                <div class="example">
+                    <%- exp %>
+                </div>
+            <%}%>
+        </fileset>
+        <!-- example end -->
+        <%}%>
+
+    </div>
+</div>

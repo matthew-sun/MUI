@@ -1,0 +1,25 @@
+<!-- constructor list start -->
+<fileset>
+    <legend>构造器列表</legend>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>方法签名</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+        <tbody>
+        <%for (var i=0, _constructor=null; _constructor=constructors[i]; i++) {%>
+            <tr>
+                <td>
+                    <%- ViewHelper.getMethodTitleHtml( _constructor, true ) %>
+                </td>
+                <td>
+                    <%- _constructor.desc %>
+                </td>
+            </tr>
+        <%}%>
+        </tbody>
+    </table>
+</fileset>
+<!-- constructor list end -->

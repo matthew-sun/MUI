@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="./css/codemirror.css">
+    <link type="text/css" href="./css/style.css" rel="stylesheet"/>
+    <link id="theme-link" type="text/css" href="./css/purple.css" rel="stylesheet"/>
+    <title><%= title %></title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="themes-list">
+        <h3 class="invisible">切换主题</h3>
+        <ul>
+            <% _.forEach( themes, function( value, key ){ %>
+            <li <%- key === activeTheme ? 'class="on"': '' %>><a href="javascript:void(0)" class="<%- key %>"><%= key %></a></li>
+
+            <% })%>
+        </ul>
+    </div>
+    <%- renderTpl('sidebar') %>
+    <%- renderTpl('content') %>
+</div>
+<a id="gotopBtn" href="#">GoTop</a>
+<script type="text/javascript">
+//<![CDATA[
+var globalSettings = {
+    themes: <%- JSON.stringify( themes, null) %>,
+    activeTheme: '<%= activeTheme %>',
+    source: <%- JSON.stringify( getSearchEntry(), null) %>
+};
+// //]]>
+</script>
+<script type="text/javascript" src="js/depencies.min.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7c62aaa2c3803c6fdbbd95058c165683' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<div class="member-module">
+    <div class="member-module-name">
+        <h2><%- ViewHelper.getModuleTitleHtml( _self, false ) %></h2>
+    </div>
+
+    <div class="member-module-desc">
+
+        <div class="member-description">
+            <%- desc %>
+        </div>
+
+        <%if ( _self.hasOwnProperty('remind') ) {%>
+        <!-- remind start -->
+        <%for ( var i=0, _remind=null; _remind=remind[i]; i++ ) {%>
+        <ul class="member-remind">
+            <li class="alert alert-success">
+                提示： <%- _remind %>
+            </li>
+        </ul>
+        <%}%>
+        <!-- remind end -->
+        <%}%>
+
+        <%if ( _self.hasOwnProperty('warning') ) {%>
+        <!-- warning start -->
+        <%for ( var i=0, _warning=null; _warning=warning[i]; i++ ) {%>
+        <ul class="member-warning">
+            <li class="alert alert-danger">
+                警告： <%- _warning %>
+            </li>
+        </ul>
+        <%}%>
+        <!-- warning end -->
+        <%}%>
+
+    </div>
+
+    <div class="member-box">
+
+        <div class="member-module-info">
+
+            <%- ViewHelper.getPropertyWidget( _self ) %>
+
+            <%- ViewHelper.getMethodWidget( _self ) %>
+
+            <%- ViewHelper.getClassWidget( _self ) %>
+
+        </div>
+
+        <div class="clazz-member-list">
+
+            <%if (_self.hasOwnProperty('__member') || _self.hasOwnProperty('class')) {%>
+            <fileset>
+                <legend>模块成员详细描述(<%- ViewHelper.getModuleTitleHtml( _self, true ) %>)</legend>
+
+                <div class="member-box">
+                    <%if ( 'property' in __memberTpl ) {%>
+                    <%- __memberTpl.property.join("") %>
+                    <%}%>
+
+                    <%if ( 'method' in __memberTpl ) {%>
+                    <%- __memberTpl.method.join("") %>
+                    <%}%>
+
+                    <%if ( _self.__classTpl.length ) {%>
+                    <%for (var i=0, _clazzTpl=null; _clazzTpl=__classTpl[i]; i++ ) {%>
+                        <%- _clazzTpl %>
+                    <%}%>
+                    <%}%>
+                </div>
+
+            </fileset>
+            <%}%>
+
+        </div>
+
+    </div>
+
+</div>

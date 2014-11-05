@@ -1,0 +1,26 @@
+<!-- class list start -->
+<fileset>
+    <legend>类列表</legend>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>类名</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+        <tbody>
+        <%for (var _key in classes ) {%>
+        <%var _clazz=classes[ _key ];%>
+            <tr>
+                <td>
+                    <%- ViewHelper.getClassTitleHtml( _clazz, true ) %>
+                </td>
+                <td>
+                    <%- _clazz.desc %>
+                </td>
+            </tr>
+        <%}%>
+        </tbody>
+    </table>
+</fileset>
+<!-- class list end -->

@@ -1,0 +1,29 @@
+<!-- method list start -->
+<fileset>
+    <legend>方法列表</legend>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>方法签名</th>
+                <th>静态</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+        <tbody>
+        <%for (var i=0, _method=null; _method=methods[i]; i++) {%>
+            <tr>
+                <td>
+                    <%- ViewHelper.getMethodTitleHtml( _method, true ) %>
+                </td>
+                <td>
+                    <%if ( _method.hasOwnProperty('static') ) { %>是<%} else {%>否<%}%>
+                </td>
+                <td>
+                    <%- _method.desc %>
+                </td>
+            </tr>
+        <%}%>
+        </tbody>
+    </table>
+</fileset>
+<!-- method list end -->
