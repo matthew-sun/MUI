@@ -18,7 +18,6 @@
  * 
  */
 
-
 var map = {
 
     core : {

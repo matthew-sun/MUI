@@ -1,4 +1,4 @@
-/**
+*
  * @file router
  * @import zepto.js,func.js,template.js
  * @module MUI
@@ -49,6 +49,28 @@ define(function(require, exports, module){
             this.load(path);
 
             return this;
+        },
+
+        /**
+        * 处理RESTful风格的路径
+        * 使用正则表达式
+        *
+        * @private
+        */
+
+        restful : function(path) {
+             var res = {
+                     params: []
+                 };
+
+             res.path = path.replace(/:([^/~]+)/g, function ($0, $1) {
+                 res.params.push($1);
+                 return '([^/~]+)';
+             });
+
+             res.path = new RegExp(res.path + '(?:~|$)');
+
+             return res;
         },
 
         /**
@@ -240,4 +262,4 @@ define(function(require, exports, module){
  * router().dataChangeReload('index',{
  *     title : 'title has changed.'
  * })
- */
+ 
