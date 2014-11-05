@@ -7,6 +7,21 @@
     "mobile",
     "ui"
   ],
+  "main" : [
+    "src/source/js/core/func.js",
+    "src/source/js/core/fastclick.js",
+    "src/source/js/core/itpl.js",
+    "src/source/js/core/router.js",
+    "src/source/js/core/template.js",
+    "src/source/js/zepto/zepto.js",
+    "src/source/js/widget/dialog.js",
+    "src/source/js/widget/iscroll.js",
+    "src/source/js/widget/lazyload.js",
+    "src/source/js/widget/loader.js",
+    "src/source/js/widget/share.js",
+    "src/source/js/widget/swipe.js",
+    "src/source/js/widget/tab.js"
+  ],
   "authors": [
     "matthewsun"
   ],
