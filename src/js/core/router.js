@@ -1,4 +1,4 @@
-*
+/*
  * @file router
  * @import zepto.js,func.js,template.js
  * @module MUI
@@ -44,6 +44,7 @@ define(function(require, exports, module){
         
         when : function(path, options) {
 
+
             this.cache[path] = options;
 
             this.load(path);
@@ -56,6 +57,7 @@ define(function(require, exports, module){
         * 使用正则表达式
         *
         * @private
+        * TODO: 等用到的时候再做匹配url的:status
         */
 
         restful : function(path) {
