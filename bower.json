@@ -1,0 +1,14 @@
+{
+  "name": "MUI",
+  "version": "1.0.0",
+  "homepage": "https://github.com/matthew-sun/MUI",
+  "description": "mobile ui components",
+  "keywords": [
+    "mobile",
+    "ui"
+  ],
+  "authors": [
+    "matthewsun"
+  ],
+  "license": "MIT"
+}
