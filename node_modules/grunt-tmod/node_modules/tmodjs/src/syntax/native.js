@@ -1,1 +1,0 @@
-module.exports = require('art-template/dist/template-native-debug.js');
