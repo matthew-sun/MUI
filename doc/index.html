@@ -176,11 +176,11 @@
                     <ul>
                         
                         <li class="method">
-                            <a class="" href="#MUI_config_API">API</a>
+                            <a class="" href="#MUI_config_MOCK_AJAX">MOCK_AJAX</a>
                         </li>
                         
                         <li class="method">
-                            <a class="" href="#MUI_config_map">map</a>
+                            <a class="" href="#MUI_config_require_map">require_map</a>
                         </li>
                         
                     </ul>
@@ -764,7 +764,7 @@ func.Device().browser.baidu</code></pre>
 
 <div class="clearfix category">
     <h2 id="MUI_router">router</h2>
-    <div class="fileinfo"><span class="label">文件</span>core/router.js<span class="label deps">依赖</span>zepto.js, func.js, template.js</div>
+    <div class="fileinfo"><span class="label">文件</span>core/router.js</div>
     <p>router.js，MUI框架的路由控制。</p>
 
 
@@ -881,7 +881,7 @@ router().when(&#39;/&#39;,{
     
     <ul class="signature">
         
-        <li>router().dataChangeReload(path, data)
+        <li>router().dataChangeReload(path, options)
             
             
         </li>
@@ -890,7 +890,7 @@ router().when(&#39;/&#39;,{
     
         <p>参数: </p>
         <ul class="params-list"><li><span class="meta"><code>path</code> {String}</span><p>模板id</p>
-</li><li><span class="meta"><code>data</code> {Json}</span><p>模板数据</p>
+</li><li><span class="meta"><code>options</code> {Json}</span><p>模板数据 {templateData: ?}</p>
 </li></ul>
     
     
@@ -899,7 +899,7 @@ router().when(&#39;/&#39;,{
 
     
         <pre><code class="lang-javascript">router().dataChangeReload(&#39;index&#39;,{
-    title : &#39;title has changed.&#39;
+    templateData : newData
 })</code></pre>
 
     
@@ -952,7 +952,7 @@ router().when(&#39;/&#39;,{
     
      
 <article class="clearfix method">
-    <h3 id="MUI_config_API"  >API
+    <h3 id="MUI_config_MOCK_AJAX"  >MOCK_AJAX
         
     </h3>
     
@@ -966,10 +966,20 @@ router().when(&#39;/&#39;,{
         <ul class="params-list"><li><span class="meta"> {name : url, ...}</span></li></ul>
     
 
-    <p>mock_ajax.js，API 聚合地址页 ( json 数据格式 )，方便API的统一管理。约定：所有的API地址全部从这里获取。</p>
+    <p>mock_ajax.js，MOCK_AJAX 聚合地址页 ( json 数据格式 )，方便API的统一管理。约定：所有的API地址全部从这里获取。</p>
 
     
-        <pre><code class="lang-javascript">var MOCK_AJAX = require(&#39;./config/mock_ajax&#39;);
+        <pre><code class="lang-javascript">// 可能是长这个样子的
+var MOCK_AJAX = {
+     loginPPTV : &#39;http://user.vas.pptv.com/api/ajax/loginCms.php?app=1717wan&#39;, // 登录检测接口 对 PPTV主站     
+     indexVideoData : &#39;http://m.1717wan.cn/?ajax=1&amp;page=&#39;, // 首页精彩视频数据      
+     scheduleListData : &#39;http://m.1717wan.cn/match/?ajax=1&amp;page=&#39;, // 赛程页赛程列表数据       
+     gamesListLiveData : &#39;http://m.1717wan.cn/game/list/?ajax_1=1&amp;&#39;, // 游戏列表页直播视频数据      
+     gamesListVideoData : &#39;http://m.1717wan.cn/game/list/?ajax=1&amp;&#39;, // 游戏列表页精彩视频数据      
+     recordsListData : &#39;http://m.1717wan.cn/mylottery/order?ajax=1&amp;p=&#39; // 赛程页赛程列表数据  
+}
+
+var MOCK_AJAX = require(&#39;./config/mock_ajax&#39;);
 
 $.ajax({
     url : MOCK_AJAX
@@ -980,7 +990,7 @@ $.ajax({
 </article>
 
 <article class="clearfix method">
-    <h3 id="MUI_config_map"  >map
+    <h3 id="MUI_config_require_map"  >require_map
         
     </h3>
     
@@ -996,7 +1006,28 @@ $.ajax({
 
     
         <pre><code class="lang-javascript">比如：router依赖&#39;zepto&#39;,&#39;func&#39;,&#39;template&#39;，记录为：
-    router : [&#39;zepto&#39;,&#39;func&#39;,&#39;template&#39;]</code></pre>
+    router : [&#39;zepto&#39;,&#39;func&#39;,&#39;template&#39;]
+
+// 可能它会是长这个样子的
+ var require_map = {
+
+     core : {
+         func : [&#39;zepto&#39;],
+         fastclick : [] ,
+         itpl : [] ,
+         router : [&#39;zepto&#39;,&#39;func&#39;,&#39;template&#39;]
+     },
+
+     widget : {
+         iscroll : [] ,
+         dialog : [&#39;zepto&#39;,&#39;func&#39;] ,
+         loader : [&#39;zepto&#39;,&#39;func&#39;] ,
+         lazyload : [&#39;zepto&#39;,&#39;func&#39;] ,
+         tab : [&#39;zepto&#39;,&#39;func&#39;] ,
+         share : [&#39;zepto&#39;,&#39;func&#39;,&#39;itpl&#39;] ,
+         swipe : []
+     }
+ }</code></pre>
 
     
 </article>
@@ -1280,7 +1311,7 @@ tab({
 var globalSettings = {
     themes: {"purple":"./css/purple.css","blue":"./css/blue.css","dark":"./css/dark.css","orange":"./css/orange.css"},
     activeTheme: 'purple',
-    source: [{"label":"FastClick","value":"FastClick","desc":"fastclick专为移动端而生，具体解决了移动端的点透bu","href":"#MUI_fastclick_FastClick","category":"fastclick"},{"label":"CLass","value":"CLass","desc":"创建Class\n创建类的API，统一自调用init方法","href":"#MUI_func_CLass","category":"func"},{"label":"keys","value":"keys","desc":"获取键值","href":"#MUI_func_keys","category":"func"},{"label":"bindActiveLink","value":"bindActiveLink","desc":"移动端模拟手触摸时的效果","href":"#MUI_func_bindActiveLink","category":"func"},{"label":"fix","value":"fix","desc":"固顶fix方法，对不支持position:fixed的设备上","href":"#MUI_func_fix","category":"func"},{"label":"fire","value":"fire","desc":"\n广播事件\n+ 目标: 为了尽可能的减少模块之间业务逻辑的耦","href":"#MUI_func_fire","category":"func"},{"label":"on","value":"on","desc":"\non -> 订阅广播事件","href":"#MUI_func_on","category":"func"},{"label":"un","value":"un","desc":"\nun -> 退订广播事件","href":"#MUI_func_un","category":"func"},{"label":"removeAll","value":"removeAll","desc":"\nremoveAll -> 退订所有广播事件","href":"#MUI_func_removeAll","category":"func"},{"label":"loader","value":"loader","desc":"对jsonp的简单封装","href":"#MUI_func_loader","category":"func"},{"label":"getCookie","value":"getCookie","desc":"","href":"#MUI_func_getCookie","category":"func"},{"label":"setCooKie","value":"setCooKie","desc":"","href":"#MUI_func_setCooKie","category":"func"},{"label":"removeCookie","value":"removeCookie","desc":"","href":"#MUI_func_removeCookie","category":"func"},{"label":"Device","value":"Device","desc":"判断浏览器版本","href":"#MUI_func_Device","category":"func"},{"label":"when","value":"when","desc":"当window的url的hash值是什么时，选择什么模板进行","href":"#MUI_router_when","category":"router"},{"label":"otherwise","value":"otherwise","desc":"路由默认跳转地址","href":"#MUI_router_otherwise","category":"router"},{"label":"dataChangeReload","value":"dataChangeReload","desc":"数据发生改变时重新渲染","href":"#MUI_router_dataChangeReload","category":"router"},{"label":"template","value":"template","desc":"[API文档](https://github.com/aui","href":"#MUI_template_template","category":"template"},{"label":"API","value":"API","desc":"mock_ajax.js，API 聚合地址页 ( json ","href":"#MUI_config_API","category":"config"},{"label":"map","value":"map","desc":"记录seajs的依赖关系，\n方便组件代码在重构时，api改变","href":"#MUI_config_map","category":"config"},{"label":"dialog","value":"dialog","desc":"弹窗","href":"#MUI_widget_dialog","category":"widget"},{"label":"dialog().show","value":"dialog().show","desc":"弹窗显示","href":"#MUI_widget_dialog_show","category":"widget"},{"label":"dialog().hide","value":"dialog().hide","desc":"弹窗显示","href":"#MUI_widget_dialog_hide","category":"widget"},{"label":"iscroll","value":"iscroll","desc":"[iscroll项目地址](https://github.c","href":"#MUI_widget_iscroll","category":"widget"},{"label":"Lazyload","value":"Lazyload","desc":"页面初始化加载图片懒加载模块","href":"#MUI_widget_Lazyload","category":"widget"},{"label":"share","value":"share","desc":"移动端自定义分享组件","href":"#MUI_widget_share","category":"widget"},{"label":"swipe","value":"swipe","desc":"[swipe项目地址](https://github.com","href":"#MUI_widget_swipe","category":"widget"},{"label":"tab","value":"tab","desc":"tab 切换","href":"#MUI_widget_tab","category":"widget"}]
+    source: [{"label":"FastClick","value":"FastClick","desc":"fastclick专为移动端而生，具体解决了移动端的点透bu","href":"#MUI_fastclick_FastClick","category":"fastclick"},{"label":"CLass","value":"CLass","desc":"创建Class\n创建类的API，统一自调用init方法","href":"#MUI_func_CLass","category":"func"},{"label":"keys","value":"keys","desc":"获取键值","href":"#MUI_func_keys","category":"func"},{"label":"bindActiveLink","value":"bindActiveLink","desc":"移动端模拟手触摸时的效果","href":"#MUI_func_bindActiveLink","category":"func"},{"label":"fix","value":"fix","desc":"固顶fix方法，对不支持position:fixed的设备上","href":"#MUI_func_fix","category":"func"},{"label":"fire","value":"fire","desc":"\n广播事件\n+ 目标: 为了尽可能的减少模块之间业务逻辑的耦","href":"#MUI_func_fire","category":"func"},{"label":"on","value":"on","desc":"\non -> 订阅广播事件","href":"#MUI_func_on","category":"func"},{"label":"un","value":"un","desc":"\nun -> 退订广播事件","href":"#MUI_func_un","category":"func"},{"label":"removeAll","value":"removeAll","desc":"\nremoveAll -> 退订所有广播事件","href":"#MUI_func_removeAll","category":"func"},{"label":"loader","value":"loader","desc":"对jsonp的简单封装","href":"#MUI_func_loader","category":"func"},{"label":"getCookie","value":"getCookie","desc":"","href":"#MUI_func_getCookie","category":"func"},{"label":"setCooKie","value":"setCooKie","desc":"","href":"#MUI_func_setCooKie","category":"func"},{"label":"removeCookie","value":"removeCookie","desc":"","href":"#MUI_func_removeCookie","category":"func"},{"label":"Device","value":"Device","desc":"判断浏览器版本","href":"#MUI_func_Device","category":"func"},{"label":"when","value":"when","desc":"当window的url的hash值是什么时，选择什么模板进行","href":"#MUI_router_when","category":"router"},{"label":"otherwise","value":"otherwise","desc":"路由默认跳转地址","href":"#MUI_router_otherwise","category":"router"},{"label":"dataChangeReload","value":"dataChangeReload","desc":"数据发生改变时重新渲染","href":"#MUI_router_dataChangeReload","category":"router"},{"label":"template","value":"template","desc":"[API文档](https://github.com/aui","href":"#MUI_template_template","category":"template"},{"label":"MOCK_AJAX","value":"MOCK_AJAX","desc":"mock_ajax.js，MOCK_AJAX 聚合地址页 (","href":"#MUI_config_MOCK_AJAX","category":"config"},{"label":"require_map","value":"require_map","desc":"记录seajs的依赖关系，\n方便组件代码在重构时，api改变","href":"#MUI_config_require_map","category":"config"},{"label":"dialog","value":"dialog","desc":"弹窗","href":"#MUI_widget_dialog","category":"widget"},{"label":"dialog().show","value":"dialog().show","desc":"弹窗显示","href":"#MUI_widget_dialog_show","category":"widget"},{"label":"dialog().hide","value":"dialog().hide","desc":"弹窗显示","href":"#MUI_widget_dialog_hide","category":"widget"},{"label":"iscroll","value":"iscroll","desc":"[iscroll项目地址](https://github.c","href":"#MUI_widget_iscroll","category":"widget"},{"label":"Lazyload","value":"Lazyload","desc":"页面初始化加载图片懒加载模块","href":"#MUI_widget_Lazyload","category":"widget"},{"label":"share","value":"share","desc":"移动端自定义分享组件","href":"#MUI_widget_share","category":"widget"},{"label":"swipe","value":"swipe","desc":"[swipe项目地址](https://github.com","href":"#MUI_widget_swipe","category":"widget"},{"label":"tab","value":"tab","desc":"tab 切换","href":"#MUI_widget_tab","category":"widget"}]
 };
 // //]]>
 </script>

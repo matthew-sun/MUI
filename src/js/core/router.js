@@ -157,8 +157,8 @@ define(function(require, exports, module){
          * @param  {[type]} data 新的数据
          */
         
-        dataChangeReload : function(path, data) {
-            this.cache[path].templateData = data;
+        dataChangeReload : function(path, options) {
+            this.cache[path].templateData = options.templateData;
             this.load(path);
         },
 
@@ -256,13 +256,13 @@ define(function(require, exports, module){
 
 /**
  * @method dataChangeReload
- * @grammar router().dataChangeReload(path, data)
+ * @grammar router().dataChangeReload(path, options)
  * @param {String} path 模板id
- * @param {Json} data 模板数据
+ * @param {Json} options 模板数据 {templateData: ?}
  * @desc 数据发生改变时重新渲染
  * @example
  * router().dataChangeReload('index',{
- *     title : 'title has changed.'
+ *     templateData : newData
  * })
  */
  
