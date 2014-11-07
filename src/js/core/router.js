@@ -144,6 +144,7 @@ define(function(require, exports, module){
             }
 
             var renderHtml = template(me.cache[path].templateId,data);
+            
             $view.html( renderHtml );
 
             me.cache[path].controller && me.cache[path].controller();
