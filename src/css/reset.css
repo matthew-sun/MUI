@@ -1,7 +1,13 @@
 /*===== 样式重置 =====*/
     html,body,h1,h2,h3,h4,h5,h6,hr,p,iframe,dl,dt,dd,ul,ol,li,pre,form,fieldset,button,input,textarea,th,td{margin:0;padding:0;}
 
-    html{overflow-y:scroll;}
+    /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+    /* ref: http://www.zhihu.com/question/21093147/answer/17158909 */
+    html {
+      overflow-y:scroll;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
     body{height:100%; background-color:#fff;}
 
     body{font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3"; font-size: 14px; line-height: 1.4;
